@@ -1,0 +1,90 @@
+---
+interface Props {
+  variant?: 'default' | 'accent' | 'glass' | 'interactive';
+  glow?: 'cyan' | 'blue' | 'purple' | 'none';
+  padding?: 'sm' | 'md' | 'lg' | 'none';
+  class?: string;
+  href?: string;
+  title?: string;
+  badge?: string;
+  [key: string]: any;
+}
+
+const {
+  variant = 'default',
+  glow = 'cyan',
+  padding = 'md',
+  class: className = '',
+  href,
+  title,
+  badge,
+  ...restProps
+} = Astro.props;
+
+const paddingStyles = {
+  none: "p-0",
+  sm: "p-4 sm:p-5",
+  md: "p-6 sm:p-7",
+  lg: "p-8 sm:p-10"
+};
+
+const glowStyles = {
+  cyan: "group-hover:shadow-[0_0_35px_-5px_rgba(6,182,212,0.3)] border-slate-800 hover:border-cyan-500/50",
+  blue: "group-hover:shadow-[0_0_35px_-5px_rgba(37,99,235,0.3)] border-slate-800 hover:border-blue-500/50",
+  purple: "group-hover:shadow-[0_0_35px_-5px_rgba(139,92,246,0.3)] border-slate-800 hover:border-purple-500/50",
+  none: "border-slate-800"
+};
+
+const variantBg = {
+  default: "bg-slate-900/80 backdrop-blur-xl",
+  accent: "bg-gradient-to-b from-slate-900/90 to-slate-950/90 backdrop-blur-xl border-t-2 border-t-cyan-400",
+  glass: "bg-slate-950/60 backdrop-blur-2xl border-white/10",
+  interactive: "bg-slate-900/70 hover:bg-slate-900/90 backdrop-blur-xl cursor-pointer hover:-translate-y-1 transition-all duration-300"
+};
+
+const Element = href ? 'a' : 'div';
+---
+
+<Element
+  href={href}
+  class:list={[
+    "group relative rounded-2xl border transition-all duration-300 overflow-hidden shadow-xl block text-inherit no-underline",
+    variantBg[variant],
+    glowStyles[glow],
+    paddingStyles[padding],
+    className
+  ]}
+  {...restProps}
+>
+  <!-- Top Prism Optical Light Sweep -->
+  <div class="absolute -top-[1px] left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+  <!-- Radial Background Glow Lens -->
+  <div class="absolute -top-24 -right-24 w-48 h-48 rounded-full bg-cyan-500/10 blur-3xl group-hover:bg-cyan-400/20 transition-all duration-500 pointer-events-none"></div>
+
+  { (title || badge || Astro.slots.has('header')) && (
+    <div class="flex items-center justify-between gap-4 mb-4 z-10 relative">
+      {title && (
+        <h3 class="text-xl font-semibold text-slate-100 group-hover:text-cyan-300 transition-colors duration-300 tracking-tight">
+          {title}
+        </h3>
+      )}
+      {badge && (
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-cyan-950/80 text-cyan-300 border border-cyan-500/30">
+          {badge}
+        </span>
+      )}
+      <slot name="header" />
+    </div>
+  )}
+
+  <div class="relative z-10 text-slate-300 leading-relaxed">
+    <slot />
+  </div>
+
+  {Astro.slots.has('footer') && (
+    <div class="mt-6 pt-4 border-t border-slate-800/80 relative z-10 flex items-center justify-between">
+      <slot name="footer" />
+    </div>
+  )}
+</Element>

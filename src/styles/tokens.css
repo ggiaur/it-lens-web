@@ -1,0 +1,79 @@
+/* IT LENS Optical Design System Tokens */
+:root {
+  /* Brand Primary Colors */
+  --color-obsidian: #070a12;
+  --color-navy-dark: #0b1120;
+  --color-navy-card: #111827;
+  --color-navy-surface: #1e293b;
+  --color-navy-border: #334155;
+
+  /* Accent & Energy Colors */
+  --color-blue-primary: #2563eb;
+  --color-blue-light: #3b82f6;
+  --color-cyan-glow: #06b6d4;
+  --color-cyan-bright: #00f2fe;
+  --color-purple-prism: #8b5cf6;
+
+  /* Status Colors */
+  --color-emerald-success: #10b981;
+  --color-amber-warning: #f59e0b;
+  --color-rose-danger: #f43f5e;
+
+  /* Typography Text Tokens */
+  --color-text-heading: #f8fafc;
+  --color-text-body: #e2e8f0;
+  --color-text-muted: #94a3b8;
+  --color-text-subtle: #64748b;
+
+  /* Optical Glassmorphism Tokens */
+  --glass-bg: rgba(15, 23, 42, 0.75);
+  --glass-bg-hover: rgba(30, 41, 59, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-border-hover: rgba(6, 182, 212, 0.5);
+  --glass-blur: blur(16px);
+  --glass-blur-heavy: blur(24px);
+
+  /* Prism Gradients */
+  --gradient-prism: linear-gradient(135deg, rgba(6, 182, 212, 0.4) 0%, rgba(37, 99, 235, 0.25) 50%, rgba(139, 92, 246, 0.35) 100%);
+  --gradient-prism-border: linear-gradient(135deg, rgba(0, 242, 254, 0.6), rgba(37, 99, 235, 0.3), rgba(139, 92, 246, 0.5));
+  --gradient-button-primary: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+  --gradient-button-primary-hover: linear-gradient(135deg, #1d4ed8 0%, #0891b2 100%);
+  --gradient-lens-glow: radial-gradient(circle at 50% 0%, rgba(6, 182, 212, 0.2), transparent 70%);
+
+  /* Optical Glow Shadows */
+  --glow-cyan: 0 0 25px -5px rgba(6, 182, 212, 0.4);
+  --glow-blue: 0 0 25px -5px rgba(37, 99, 235, 0.4);
+  --glow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+  --glow-card-hover: 0 20px 40px -12px rgba(6, 182, 212, 0.25);
+  --glow-button: 0 4px 20px rgba(6, 182, 212, 0.35);
+
+  /* Radii & Transitions */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@theme {
+  --color-obsidian: var(--color-obsidian);
+  --color-navy-dark: var(--color-navy-dark);
+  --color-navy-card: var(--color-navy-card);
+  --color-navy-surface: var(--color-navy-surface);
+  --color-blue-primary: var(--color-blue-primary);
+  --color-cyan-glow: var(--color-cyan-glow);
+  --color-cyan-bright: var(--color-cyan-bright);
+  --color-purple-prism: var(--color-purple-prism);
+}
+
+/* Background grid utility */
+.bg-tech-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}

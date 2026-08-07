@@ -1,0 +1,68 @@
+---
+interface Props {
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
+  size?: 'sm' | 'md' | 'lg';
+  href?: string;
+  type?: 'button' | 'submit' | 'reset';
+  fullWidth?: boolean;
+  disabled?: boolean;
+  class?: string;
+  ariaLabel?: string;
+  [key: string]: any;
+}
+
+const {
+  variant = 'primary',
+  size = 'md',
+  href,
+  type = 'button',
+  fullWidth = false,
+  disabled = false,
+  class: className = '',
+  ariaLabel,
+  ...restProps
+} = Astro.props;
+
+const baseStyles = "inline-flex items-center justify-center font-medium transition-all duration-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-slate-950 disabled:opacity-50 disabled:pointer-events-none cursor-pointer relative overflow-hidden group select-none";
+
+const sizeStyles = {
+  sm: "px-3.5 py-1.5 text-xs gap-1.5 tracking-wide",
+  md: "px-5 py-2.5 text-sm gap-2 tracking-wide",
+  lg: "px-7 py-3.5 text-base gap-2.5 font-semibold tracking-wide"
+};
+
+const variantStyles = {
+  primary: "bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white shadow-lg shadow-cyan-500/25 hover:shadow-cyan-400/40 hover:-translate-y-0.5 active:translate-y-0 border border-cyan-300/30",
+  secondary: "bg-slate-900/80 hover:bg-slate-800/90 text-slate-100 border border-slate-700/60 hover:border-cyan-500/50 backdrop-blur-md hover:-translate-y-0.5 active:translate-y-0 shadow-md",
+  outline: "bg-transparent text-cyan-400 hover:text-white border border-cyan-500/60 hover:border-cyan-400 hover:bg-cyan-500/10 backdrop-blur-sm hover:-translate-y-0.5 active:translate-y-0 shadow-sm shadow-cyan-500/10",
+  ghost: "bg-transparent text-slate-300 hover:text-white hover:bg-slate-800/50 hover:-translate-y-0.5 active:translate-y-0"
+};
+
+const combinedClasses = [
+  baseStyles,
+  sizeStyles[size],
+  variantStyles[variant],
+  fullWidth ? 'w-full' : '',
+  className
+].filter(Boolean).join(' ');
+
+const Element = href ? 'a' : 'button';
+---
+
+<Element
+  href={href}
+  type={!href ? type : undefined}
+  disabled={!href ? disabled : undefined}
+  class={combinedClasses}
+  aria-label={ariaLabel}
+  {...restProps}
+>
+  <!-- Radiant lens flare effect on hover for primary variant -->
+  {variant === 'primary' && (
+    <span class="absolute inset-0 w-full h-full bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none"></span>
+  )}
+
+  <slot name="iconLeft" />
+  <span><slot /></span>
+  <slot name="iconRight" />
+</Element>
