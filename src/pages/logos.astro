@@ -5,77 +5,29 @@ import PrismCard from '../components/PrismCard.astro';
 import Badge from '../components/Badge.astro';
 ---
 
-<MainLayout title="Végleges Logó Tervek — IT LENS">
+<MainLayout title="Hivatalos Logó — IT LENS">
   <div class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
     
     <div class="text-center max-w-3xl mx-auto space-y-4">
-      <Badge variant="cyan" pulse={true}>Pontosított Végleges Logók</Badge>
+      <Badge variant="cyan" pulse={true}>Kiválasztott Márkaidentitás</Badge>
       <h1 class="text-4xl sm:text-5xl font-extrabold text-white font-['Plus_Jakarta_Sans']">
-        IT LENS — Egyedi Végleges Tervek
+        IT LENS — Hivatalos Céges Logó
       </h1>
       <p class="text-slate-300 text-lg">
-        Az A forma, B alsó felirat és a 4-es monogram fúziójával készült végleges logó változatok.
+        A kiválasztott 4-es számú lencse-monogram identitás.
       </p>
     </div>
 
-    <!-- Final Tailored Options -->
-    <div class="space-y-8">
-      <SectionHeader
-        tag="Pontos specifikáció alapján készült végleges tervek"
-        title="Végleges Logó Változatok"
-        description="Világoskék IT, sötétkék L, fehér ENS és fehér Advisory & Technology felirattal, lencse fókuszban lebegő monogrammal."
-      />
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        
-        <!-- Final Option 1 -->
-        <PrismCard title="Végleges Logó 1 (Finom Hálózati Glow)" badge="Végleges 1" glow="cyan" padding="lg" variant="accent">
-          <div class="aspect-square rounded-2xl overflow-hidden mb-6 border border-cyan-500/50 shadow-2xl">
-            <img src="/logos/final-1.jpg" alt="Final Logo 1" class="w-full h-full object-cover" />
-          </div>
-          <ul class="text-xs text-slate-300 space-y-2">
-            <li>✔ <strong>Külső forma:</strong> A-s hexagonális lencse finom glowing hálózattal.</li>
-            <li>✔ <strong>Fókusz:</strong> 4-es ITL monogram lebegő, külső kör nélküli kivitelben.</li>
-            <li>✔ <strong>Színek:</strong> Világoskék <strong>IT</strong>, sötétkék <strong>L</strong>, fehér <strong>ENS</strong>, fehér <strong>ADVISORY & TECHNOLOGY</strong>.</li>
-          </ul>
-        </PrismCard>
-
-        <!-- Final Option 2 -->
-        <PrismCard title="Végleges Logó 2 (Letisztult Vektor Vonalak)" badge="Végleges 2" glow="blue" padding="lg" variant="accent">
-          <div class="aspect-square rounded-2xl overflow-hidden mb-6 border border-blue-500/50 shadow-2xl">
-            <img src="/logos/final-2.jpg" alt="Final Logo 2" class="w-full h-full object-cover" />
-          </div>
-          <ul class="text-xs text-slate-300 space-y-2">
-            <li>✔ <strong>Külső forma:</strong> Tiszta szimmetrikus vektor lencse ívek.</li>
-            <li>✔ <strong>Fókusz:</strong> Szélesebb lencsenyílású ITL fókuszált belső monogram.</li>
-            <li>✔ <strong>Színek:</strong> Világoskék <strong>IT</strong>, sötétkék <strong>L</strong>, fehér <strong>ENS</strong>, fehér <strong>ADVISORY & TECHNOLOGY</strong>.</li>
-          </ul>
-        </PrismCard>
-
-      </div>
-    </div>
-
-    <!-- Reference history -->
-    <div class="space-y-8 pt-8 border-t border-blue-900/40">
-      <SectionHeader
-        tag="Előzmény modulok"
-        title="Korábbi Kombinációk"
-        description="Amelyekből a pontosított végső tervek megszülettek."
-      />
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <PrismCard title="Kombináció A" badge="Előzmény A" glow="cyan">
-          <div class="aspect-square rounded-xl overflow-hidden mb-3 border border-blue-800/60">
-            <img src="/logos/combined-a.jpg" alt="Combined A" class="w-full h-full object-cover" />
-          </div>
-        </PrismCard>
-
-        <PrismCard title="Kombináció B" badge="Előzmény B" glow="blue">
-          <div class="aspect-square rounded-xl overflow-hidden mb-3 border border-blue-800/60">
-            <img src="/logos/combined-b.jpg" alt="Combined B" class="w-full h-full object-cover" />
-          </div>
-        </PrismCard>
-      </div>
+    <!-- Official Chosen Logo Showcase -->
+    <div class="max-w-2xl mx-auto">
+      <PrismCard title="IT LENS Official Logo (Concept 4)" badge="Hivatalos Logó" glow="cyan" padding="lg" variant="accent">
+        <div class="aspect-square rounded-2xl overflow-hidden mb-6 border-2 border-cyan-400 shadow-2xl">
+          <img src="/logo.jpg" alt="Official IT LENS Logo" class="w-full h-full object-cover" />
+        </div>
+        <p class="text-sm text-slate-200 leading-relaxed text-center">
+          Az <strong>ITL monogram</strong> és a körkörös lencse fókuszring ötvözete a hivatalos élesített márkaidentitás az IT LENS weboldalán és a letölthető dokumentációban.
+        </p>
+      </PrismCard>
     </div>
 
   </div>
