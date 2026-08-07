@@ -2,4 +2,6 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/vmksybel/public_html
-    - /bin/cp -R dist/* $DEPLOYPATH
+    - if [ -d "dist" ]; then /bin/cp -R dist/* $DEPLOYPATH; else /bin/cp -R * $DEPLOYPATH; fi
+    - export DEPLOYPATH2=/home/vmksybel/it-lens.hu
+    - if [ -d "dist" ]; then /bin/cp -R dist/* $DEPLOYPATH2 2>/dev/null || true; else /bin/cp -R * $DEPLOYPATH2 2>/dev/null || true; fi
