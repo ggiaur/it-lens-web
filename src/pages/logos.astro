@@ -1,0 +1,76 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import PrismCard from '../components/PrismCard.astro';
+import Badge from '../components/Badge.astro';
+---
+
+<MainLayout title="Logó Variációk — IT LENS">
+  <div class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+    
+    <div class="text-center max-w-3xl mx-auto space-y-4">
+      <Badge variant="cyan" pulse={true}>Márkaidentitás</Badge>
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-white font-['Plus_Jakarta_Sans']">
+        IT LENS — 5 Logó Variáció
+      </h1>
+      <p class="text-slate-300 text-lg">
+        Válassza ki a szervezet arculatához leginkább illeszkedő logó koncepciót.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Logo 1 -->
+      <PrismCard title="1. Cybernetic Lens Focus" badge="Koncepció 1" glow="cyan" padding="lg">
+        <div class="aspect-square rounded-xl overflow-hidden mb-4 border border-blue-800/60 shadow-lg">
+          <img src="/logos/logo-1.jpg" alt="Logo 1 - Cybernetic Lens Focus" class="w-full h-full object-cover" />
+        </div>
+        <p class="text-xs text-slate-300">
+          Optikai lencse és célkereszt glowing cyan/blue színhasználattal. Precíz rálátást és fókuszált IT kontrollt fejez ki.
+        </p>
+      </PrismCard>
+
+      <!-- Logo 2 -->
+      <PrismCard title="2. Digital Network Aperture" badge="Koncepció 2" glow="blue" padding="lg">
+        <div class="aspect-square rounded-xl overflow-hidden mb-4 border border-blue-800/60 shadow-lg">
+          <img src="/logos/logo-2.jpg" alt="Logo 2 - Digital Network Aperture" class="w-full h-full object-cover" />
+        </div>
+        <p class="text-xs text-slate-300">
+          Hexagonális lencse blende hálózati csomópontokkal. Infrastruktúra és felhős rendszerek átvilágításához.
+        </p>
+      </PrismCard>
+
+      <!-- Logo 3 -->
+      <PrismCard title="3. Refraction Optical Prism" badge="Koncepció 3" glow="purple" padding="lg">
+        <div class="aspect-square rounded-xl overflow-hidden mb-4 border border-blue-800/60 shadow-lg">
+          <img src="/logos/logo-3.jpg" alt="Logo 3 - Refraction Optical Prism" class="w-full h-full object-cover" />
+        </div>
+        <p class="text-xs text-slate-300">
+          Elegáns kristály prizma, ami a kaotikus IT jeleket egy központi stratégiai fókuszba sűríti.
+        </p>
+      </PrismCard>
+
+      <!-- Logo 4 -->
+      <PrismCard title="4. Monogram ITL Focus Ring" badge="Koncepció 4" glow="cyan" padding="lg">
+        <div class="aspect-square rounded-xl overflow-hidden mb-4 border border-blue-800/60 shadow-lg">
+          <img src="/logos/logo-4.jpg" alt="Logo 4 - Monogram ITL Focus Ring" class="w-full h-full object-cover" />
+        </div>
+        <p class="text-xs text-slate-300">
+          Az I-T-L betűk összeolvadása egy lencseringben. Erős vállalati monogram identitás.
+        </p>
+      </PrismCard>
+
+      <!-- Logo 5 -->
+      <PrismCard title="5. Minimalist Geometric Aperture" badge="Koncepció 5" glow="emerald" padding="lg">
+        <div class="aspect-square rounded-xl overflow-hidden mb-4 border border-blue-800/60 shadow-lg">
+          <img src="/logos/logo-5.jpg" alt="Logo 5 - Minimalist Geometric Aperture" class="w-full h-full object-cover" />
+        </div>
+        <p class="text-xs text-slate-300">
+          Egymásba fonódó geometriai ívek központi kék fókuszponttal. Letisztult B2B tanácsadói arculat.
+        </p>
+      </PrismCard>
+
+    </div>
+
+  </div>
+</MainLayout>
