@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/vmksybel/public_html
-    - if [ -d "dist" ]; then /bin/cp -R dist/* $DEPLOYPATH; else /bin/cp -R * $DEPLOYPATH; fi
-    - export DEPLOYPATH2=/home/vmksybel/it-lens.hu
-    - if [ -d "dist" ]; then /bin/cp -R dist/* $DEPLOYPATH2 2>/dev/null || true; else /bin/cp -R * $DEPLOYPATH2 2>/dev/null || true; fi
+    - export DEPLOYPATH=/home/vmksybel/it-lens.hu
+    - if [ -f "dist/index.html" ]; then /bin/cp -rf dist/* $DEPLOYPATH/; fi
+    - if [ -f "it-lens-web/dist/index.html" ]; then /bin/cp -rf it-lens-web/dist/* $DEPLOYPATH/; fi
+    - if [ -f "index.html" ] && [ -d "_astro" ]; then /bin/cp -rf index.html _astro $DEPLOYPATH/; fi
