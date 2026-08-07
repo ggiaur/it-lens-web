@@ -1,0 +1,24 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Button from '../components/Button.astro';
+import Badge from '../components/Badge.astro';
+---
+
+<MainLayout title="404 — Az oldal nem található | IT LENS">
+  <div class="py-24 md:py-36 text-center space-y-6 max-w-2xl mx-auto px-4">
+    <Badge variant="amber">404-es Hiba</Badge>
+    
+    <h1 class="text-4xl font-extrabold text-white font-['Plus_Jakarta_Sans']">
+      Az keresett oldal nem található
+    </h1>
+
+    <p class="text-slate-300">
+      A keresott hivatkozás nem létezik vagy átköltözött. Térjen vissza a főoldalra, vagy tekintse meg szolgáltatásainkat.
+    </p>
+
+    <div class="pt-4 flex justify-center gap-4">
+      <Button href="/" variant="primary" size="md">Vissza a Főoldalra</Button>
+      <Button href="/szolgaltatasok" variant="secondary" size="md">Szolgáltatások</Button>
+    </div>
+  </div>
+</MainLayout>

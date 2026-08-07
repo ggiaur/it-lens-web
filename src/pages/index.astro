@@ -2,6 +2,9 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import Button from '../components/Button.astro';
 import PrismCard from '../components/PrismCard.astro';
+import Badge from '../components/Badge.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ScorecardCalculator from '../components/ScorecardCalculator.astro';
 ---
 
 <MainLayout title="IT LENS — Stratégiai IT Tanácsadás & Működésfejlesztés">
@@ -12,10 +15,7 @@ import PrismCard from '../components/PrismCard.astro';
       <div class="text-center max-w-3xl mx-auto space-y-6">
         
         <!-- Badge -->
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 text-xs font-semibold tracking-wide uppercase shadow-lg shadow-cyan-950/50">
-          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
-          IT Fókusz & Átláthatóság Döntéshozóknak
-        </div>
+        <Badge variant="cyan" pulse={true}>IT Fókusz & Átláthatóság Döntéshozóknak</Badge>
 
         <!-- Main Title -->
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white font-['Plus_Jakarta_Sans'] leading-tight">
@@ -50,7 +50,7 @@ import PrismCard from '../components/PrismCard.astro';
         <div class="relative bg-slate-950/90 border border-slate-800 rounded-2xl p-6 sm:p-8 backdrop-blur-2xl shadow-2xl">
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             
-            <PrismCard title="Quick Clarity Audit" badge="Ingyenes" variant="accent" glow="cyan">
+            <PrismCard title="Quick Clarity Audit" badge="Ingyenes" variant="accent" glow="cyan" href="/audit">
               <p class="text-sm text-slate-300 mb-4">
                 45 perces strukturált konzultáció és 5 oldalas scorecard a legégetőbb IT kockázatok feltárására.
               </p>
@@ -60,7 +60,7 @@ import PrismCard from '../components/PrismCard.astro';
               </div>
             </PrismCard>
 
-            <PrismCard title="Deep System Lens Audit" badge="Stratégiai" variant="default" glow="blue">
+            <PrismCard title="Deep System Lens Audit" badge="Stratégiai" variant="default" glow="blue" href="/audit">
               <p class="text-sm text-slate-300 mb-4">
                 Több napos mélyreható infrastruktúra- és biztonsági elemzés 30+ oldalas döntéshozói cselekvési tervvel.
               </p>
@@ -70,7 +70,7 @@ import PrismCard from '../components/PrismCard.astro';
               </div>
             </PrismCard>
 
-            <PrismCard title="Advisory & Coaching" badge="Folyamatos" variant="glass" glow="purple">
+            <PrismCard title="Advisory & Coaching" badge="Folyamatos" variant="glass" glow="purple" href="/szolgaltatasok/strategiai-tanacsadas">
               <p class="text-sm text-slate-300 mb-4">
                 Független szakértői támogatás az IT projektvezetésben, NIS2/ISO megfelelőségben és szállítómenedzsmentben.
               </p>
@@ -87,35 +87,50 @@ import PrismCard from '../components/PrismCard.astro';
     </div>
   </section>
 
-  <!-- Problem Section -->
-  <section id="megoldasok" class="py-20 border-t border-slate-900 bg-slate-950/60 relative">
+  <!-- Interactive Calculator Section -->
+  <section class="py-16 bg-slate-950/80 border-t border-slate-900">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <ScorecardCalculator />
+    </div>
+  </section>
+
+  <!-- Industry Solutions Section -->
+  <section class="py-20 border-t border-slate-900 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
       
-      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
-        <h2 class="text-xs font-bold uppercase tracking-widest text-cyan-400">Tényhelyzet</h2>
-        <p class="text-3xl sm:text-4xl font-extrabold text-white font-['Plus_Jakarta_Sans']">
-          Ismerős kihívások az IT működésben?
-        </p>
-      </div>
+      <SectionHeader
+        tag="Célcsoportok"
+        title="Testreszabott megoldások szektoronként"
+        description="Azonnali értékteremtés az Ön szektorának sajátosságaira szabva."
+      />
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         
-        <PrismCard title="Bizonytalan Biztonság" variant="interactive" glow="cyan">
-          <p class="text-sm leading-relaxed text-slate-300">
-            Nincs pontos kép arról, hogy a biztonsági mentések működnek-e, vagy hogy egy ransomware támadás mekkora kárt okozna.
+        <PrismCard title="Közintézmények" badge="Önkormányzat / Múzeum" glow="cyan" href="/iparagak/intezmenyek">
+          <p class="text-sm text-slate-300 mb-4 leading-relaxed">
+            Könyvtárak és intézmények független IT stratégiai felügyelete, NIS2 és fenntartói megfelelőséggel.
           </p>
+          <div slot="footer">
+            <span class="text-xs text-cyan-400 font-semibold">Intézményi Útmutató →</span>
+          </div>
         </PrismCard>
 
-        <PrismCard title="Hiányzó Dokumentáció" variant="interactive" glow="cyan">
-          <p class="text-sm leading-relaxed text-slate-300">
-            Az informatikai tudás 1-2 ember fejében van meg. Nincsenek rendszerleírások, licencnyilvántartások és átadási jegyzőkönyvek.
+        <PrismCard title="Gyártás & Logisztika" badge="Kiesésmentes" glow="emerald" href="/iparagak/gyartas">
+          <p class="text-sm text-slate-300 mb-4 leading-relaxed">
+            Üzemi hálózatszegregáció, 3-2-1 katasztrófa-helyreállítás és zéró leállású hálózati kiépítés.
           </p>
+          <div slot="footer">
+            <span class="text-xs text-emerald-400 font-semibold">Gyártási IT Audit →</span>
+          </div>
         </PrismCard>
 
-        <PrismCard title="Reaktív Hibajavítás" variant="interactive" glow="cyan">
-          <p class="text-sm leading-relaxed text-slate-300">
-            Az IT-vel csak akkor foglalkoznak, amikor valami elromlik. Nincs hosszú távú fejlesztési terv és stratégiai fókusz.
+        <PrismCard title="Szolgáltató KKV-k" badge="15–80 fő" glow="purple" href="/iparagak/kkv">
+          <p class="text-sm text-slate-300 mb-4 leading-relaxed">
+            Biztonságos M365 felhőátállás, tervezhető IT költségvetés és szállítói függetlenség.
           </p>
+          <div slot="footer">
+            <span class="text-xs text-purple-400 font-semibold">KKV Megoldások →</span>
+          </div>
         </PrismCard>
 
       </div>
@@ -124,7 +139,7 @@ import PrismCard from '../components/PrismCard.astro';
   </section>
 
   <!-- CTA Section -->
-  <section id="audit" class="py-24 relative overflow-hidden">
+  <section class="py-24 relative overflow-hidden border-t border-slate-900">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="p-10 md:p-14 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 border border-cyan-500/30 shadow-2xl text-center space-y-6 relative overflow-hidden">
         

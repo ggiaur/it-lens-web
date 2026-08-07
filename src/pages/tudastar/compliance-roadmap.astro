@@ -1,0 +1,59 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import PrismCard from '../../components/PrismCard.astro';
+import Button from '../../components/Button.astro';
+import Badge from '../../components/Badge.astro';
+import AuditForm from '../../components/AuditForm.astro';
+---
+
+<MainLayout 
+  title="NIS2 & ISO 27001 Compliance Roadmap — IT LENS"
+  description="Gyakorlati felkészülési útmutató a NIS2 kiberbiztonsági elvárások és az ISO 27001 információbiztonsági elvek bevezetéséhez."
+>
+  <div class="py-16 md:py-24 space-y-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Hero -->
+    <div class="text-center max-w-3xl mx-auto space-y-6">
+      <Badge variant="purple" pulse={true}>Megfelelőségi Útmutató</Badge>
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-white font-['Plus_Jakarta_Sans'] leading-tight">
+        NIS2 & ISO 27001 Compliance Roadmap
+      </h1>
+      <p class="text-lg text-slate-300 leading-relaxed">
+        Lépésről lépésre útmutató a szabályozási megfelelőség eléréséhez és az információbiztonsági védelem kiépítéséhez.
+      </p>
+    </div>
+
+    <!-- 4 Phases of Compliance -->
+    <div class="max-w-4xl mx-auto space-y-8">
+      
+      <PrismCard title="1. Fázis: Helyzetfelmérés & Kockázatelemzés" badge="Alapozás" glow="cyan">
+        <p class="text-sm text-slate-300 leading-relaxed">
+          Kritikus adatok és rendszerek azonosítása, jelenlegi biztonsági szint felmérése és a hiányosságok (Gap Analysis) dokumentálása.
+        </p>
+      </PrismCard>
+
+      <PrismCard title="2. Fázis: Alapvető Technikai Védelmi Intézkedések" badge="Technológia" glow="blue">
+        <p class="text-sm text-slate-300 leading-relaxed">
+          Kötelező MFA azonosítás, 3-2-1 adatmentési rendszer, végpontvédelem (EDR) és hálózati szegregáció kiépítése.
+        </p>
+      </PrismCard>
+
+      <PrismCard title="3. Fázis: Szervezeti Szabályzatok & IBSZ" badge="Szervezet" glow="purple">
+        <p class="text-sm text-slate-300 leading-relaxed">
+          Informatikai Biztonsági Szabályzat (IBSZ), incidenskezelési terv és beszállítói kockázatkezelési szabályzatok megalkotása.
+        </p>
+      </PrismCard>
+
+      <PrismCard title="4. Fázis: Folyamatos Monitoring & Képzés" badge="Üzemeltetés" glow="emerald">
+        <p class="text-sm text-slate-300 leading-relaxed">
+          Loggyűjtés, rendszeres sérülékenység-vizsgálat és a munkatársak kiberbiztonsági tudatossági oktatása.
+        </p>
+      </PrismCard>
+
+    </div>
+
+    <AuditForm id="audit-form" />
+
+  </div>
+</MainLayout>

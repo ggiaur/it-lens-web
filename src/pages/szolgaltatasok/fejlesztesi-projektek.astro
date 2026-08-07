@@ -1,0 +1,90 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import PrismCard from '../../components/PrismCard.astro';
+import Button from '../../components/Button.astro';
+import Badge from '../../components/Badge.astro';
+import AuditForm from '../../components/AuditForm.astro';
+---
+
+<MainLayout 
+  title="Fejlesztési Projektek & Automatizáció — IT LENS"
+  description="Célzott IT-projekt felügyelet, felhőmigráció és AI-alapú folyamatautomatizáció KKV-knak és közintézményeknek."
+>
+  <div class="py-16 md:py-24 space-y-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Hero -->
+    <div class="text-center max-w-3xl mx-auto space-y-6">
+      <Badge variant="blue" pulse={true}>Projekt & Automatizáció</Badge>
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-white font-['Plus_Jakarta_Sans'] leading-tight">
+        IT fejlesztési projektek határidőre, büdzsé szerint és megtérüléssel.
+      </h1>
+      <p class="text-lg text-slate-300 leading-relaxed">
+        Felhőátállás (Microsoft 365 / SharePoint), virtualizáció (Hyper-V), VPN hálózatkiépítés és Power Automate / Copilot folyamatautomatizáció — szakértői felügyelettel és kivitelezéssel.
+      </p>
+      <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <Button href="#audit-form" variant="primary" size="lg">
+          Projektkonzultáció Igénylése
+        </Button>
+        <Button href="/szolgaltatasok" variant="secondary" size="lg">
+          Összes Szolgáltatás
+        </Button>
+      </div>
+    </div>
+
+    <!-- Core Services -->
+    <div class="space-y-12">
+      <SectionHeader
+        tag="Fő Területek"
+        title="Mit valósítunk meg?"
+        description="A modern vállalati és intézményi IT alapkövei, zökkenőmentes átállással."
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <PrismCard title="M365 & SharePoint Migráció" badge="Felhő" glow="cyan">
+          <p class="text-sm text-slate-300">
+            Helyi fájlszerverek kiváltása biztonságos felhős dokumentumtárral, jogosultságkezeléssel és kötelező MFA védelemmel.
+          </p>
+        </PrismCard>
+
+        <PrismCard title="Virtualizáció (Hyper-V) & VPN" badge="Infrastruktúra" glow="blue">
+          <p class="text-sm text-slate-300">
+            Helyi szerverkapacitás modernizálása hibrid környezetben, telephelyek közötti zárt, titkosított VPN csatornákkal.
+          </p>
+        </PrismCard>
+
+        <PrismCard title="AI & Power Automate" badge="Innováció" glow="purple">
+          <p class="text-sm text-slate-300">
+            M365 Copilot bevezetése és automatizált munkafolyamatok (jóváhagyási láncok, dokumentum-feldolgozás) kiépítése.
+          </p>
+        </PrismCard>
+      </div>
+    </div>
+
+    <!-- Proven Proof -->
+    <div class="space-y-12">
+      <SectionHeader
+        tag="Referenciák"
+        title="Bizonyított projektmegvalósítások"
+        description="Gyakorlati tapasztalat több telephelyes intézményi és KKV környezetben."
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <PrismCard title="Több telephelyes intézményi migráció" badge="Intézményi" glow="emerald">
+          <p class="text-sm text-slate-300">
+            5 telephelyes intézményi hálózat felhő- és hibrid migrációja (M365, SharePoint, Hyper-V virtualizáció, telephelyi VPN).
+          </p>
+        </PrismCard>
+
+        <PrismCard title="Könyvtári és adminisztratív szoftverek" badge="Közintézmény" glow="emerald">
+          <p class="text-sm text-slate-300">
+            Közintézményi szakmai szoftverrendszerek sikeres átállítása, adatbázis-migrációja és felügyelete.
+          </p>
+        </PrismCard>
+      </div>
+    </div>
+
+    <AuditForm id="audit-form" />
+
+  </div>
+</MainLayout>

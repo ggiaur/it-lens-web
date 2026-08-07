@@ -1,0 +1,103 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import PrismCard from '../../components/PrismCard.astro';
+import Button from '../../components/Button.astro';
+import Badge from '../../components/Badge.astro';
+import AuditForm from '../../components/AuditForm.astro';
+---
+
+<MainLayout 
+  title="IT Stratégiai Tanácsadás (vCIO) — IT LENS"
+  description="Döntéshozói tisztánlátás az IT-ben — váratlan kiadások és technikai kiszolgáltatottság nélkül. Független vCIO szakértelem."
+>
+  <div class="py-16 md:py-24 space-y-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Hero -->
+    <div class="text-center max-w-3xl mx-auto space-y-6">
+      <Badge variant="cyan" pulse={true}>Executive Advisory (vCIO)</Badge>
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-white font-['Plus_Jakarta_Sans'] leading-tight">
+        Döntéshozói tisztánlátás az IT-ben — váratlan kiadások nélkül.
+      </h1>
+      <p class="text-lg text-slate-300 leading-relaxed">
+        Független IT-igazgatói szakértelem 15–80 fős vállalkozások és közintézmények számára. Átlátjuk az infrastruktúrát, megtervezzük a költségvetést és felügyeljük a megvalósítást.
+      </p>
+      <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <Button href="/audit" variant="primary" size="lg">
+          Ingyenes Clarity Audit (45 perc)
+        </Button>
+        <Button href="#audit-form" variant="secondary" size="lg">
+          Executive Konzultáció
+        </Button>
+      </div>
+    </div>
+
+    <!-- Problems -->
+    <div class="space-y-12">
+      <SectionHeader
+        tag="A Probléma"
+        title="Amikor az IT fekete dobozként működik"
+        description="Belső IT-igazgató nélkül az informatikai döntések reaktívak és kiszolgáltatottak."
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <PrismCard title="Kiszolgáltatottság a beszállítóknak" glow="cyan">
+          <p class="text-sm text-slate-300">
+            Nincs független szakértő, aki felülvizsgálná, hogy a kínált IT beruházás valóban szükséges és méltányos árazású-e.
+          </p>
+        </PrismCard>
+
+        <PrismCard title="Meglepetésszerű kiadások" glow="cyan">
+          <p class="text-sm text-slate-300">
+            Nincs 3–5 éves eszköz- és büdzsé-terv; az elavuló gépek és licencek cseréje mindig meglepetésként éri a költségvetést.
+          </p>
+        </PrismCard>
+
+        <PrismCard title="Jogszabályi nyomás (NIS2 / GDPR)" glow="cyan">
+          <p class="text-sm text-slate-300">
+            Egyre szigorúbbak a biztonsági elvárások, amelyekre a vezetésnek dokumentált válaszokat és mérhető szintet kell felmutatnia.
+          </p>
+        </PrismCard>
+      </div>
+    </div>
+
+    <!-- Deliverables -->
+    <div class="space-y-12">
+      <SectionHeader
+        tag="Deliverables"
+        title="Mit kap a megrendelő?"
+        description="Kézzelfogható vezetői kimenetek és kiszámítható biztonsági garanciák."
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <PrismCard title="1. Vezetői Clarity Scorecard & Audit" badge="Riport" glow="blue">
+          <p class="text-sm text-slate-300">
+            Dokumentált, 30+ oldalas döntéshozói elemzés a szervezet teljes IT infrastruktúrájáról és kockázatairól.
+          </p>
+        </PrismCard>
+
+        <PrismCard title="2. 3–5 Éves IT Stratégia & Büdzsé" badge="Tervezés" glow="blue">
+          <p class="text-sm text-slate-300">
+            Előre kiszámítható beruházási büdzsé az elavuló gépek, licencek és hálózati elemek szakszerű cseréjére.
+          </p>
+        </PrismCard>
+
+        <PrismCard title="3. Beszállítói Árajánlatok Független Kontrollja" badge="Megtakarítás" glow="purple">
+          <p class="text-sm text-slate-300">
+            Szakértői felülvizsgálat minden 500.000 Ft feletti IT beszerzésnél és fejlesztési projektnél.
+          </p>
+        </PrismCard>
+
+        <PrismCard title="4. Negyedéves Executive IT-Review" badge="Vezetői" glow="purple">
+          <p class="text-sm text-slate-300">
+            Rendszeres stratégiai egyeztetés a cégvezetővel / intézményfejjel a célok és a biztonsági szint teljesüléséről.
+          </p>
+        </PrismCard>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <AuditForm id="audit-form" />
+
+  </div>
+</MainLayout>

@@ -1,0 +1,59 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import PrismCard from '../../components/PrismCard.astro';
+import Button from '../../components/Button.astro';
+import Badge from '../../components/Badge.astro';
+---
+
+<MainLayout 
+  title="Tudástár & Letölthető Anyagok — IT LENS"
+  description="Díjmentes IT biztonsági ellenőrzőlisták, Clarity Scorecard minták és NIS2/ISO27001 útmutatók döntéshozóknak."
+>
+  <div class="py-16 md:py-24 space-y-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Hero -->
+    <div class="text-center max-w-3xl mx-auto space-y-6">
+      <Badge variant="cyan" pulse={true}>Tudástár & Erőforrások</Badge>
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-white font-['Plus_Jakarta_Sans'] leading-tight">
+        Gyakorlati útmutatók és ellenőrzőlisták döntéshozóknak.
+      </h1>
+      <p class="text-lg text-slate-300 leading-relaxed">
+        Szakmai anyagaink segítségével azonnal átvilágíthatja szervezete IT biztonságát, dokumentációs szintjét és jogszabályi felkészültségét.
+      </p>
+    </div>
+
+    <!-- Resource Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <PrismCard title="Clarity Scorecard Minta" badge="Audit Minta" glow="cyan" padding="lg">
+        <p class="text-sm text-slate-300 mb-6">
+          Ismerje meg a 45 perces Quick Clarity Audit során átadásra kerülő pontozott vezetői értékelést és kockázati mátrixot.
+        </p>
+        <div slot="footer">
+          <Button href="/tudastar/clarity-scorecard" variant="outline" size="sm">Megtekintés</Button>
+        </div>
+      </PrismCard>
+
+      <PrismCard title="Közintézményi Ellenőrzőlista" badge="Ellenőrzőlista" glow="blue" padding="lg">
+        <p class="text-sm text-slate-300 mb-6">
+          IT Biztonsági & Megfelelőségi Ellenőrzőlista önálló IT-kapacitással nem rendelkező könyvtárak, múzeumok és intézmények számára.
+        </p>
+        <div slot="footer">
+          <Button href="/tudastar/ellenorzolista-kozintezmeny" variant="outline" size="sm">Megtekintés</Button>
+        </div>
+      </PrismCard>
+
+      <PrismCard title="NIS2 & ISO Compliance Roadmap" badge="Útmutató" glow="purple" padding="lg">
+        <p class="text-sm text-slate-300 mb-6">
+          Gyakorlati felkészülési lépések a NIS2 és az ISO 27001 információbiztonsági alapelvek szerinti védelmi szint kiépítéséhez.
+        </p>
+        <div slot="footer">
+          <Button href="/tudastar/compliance-roadmap" variant="outline" size="sm">Megtekintés</Button>
+        </div>
+      </PrismCard>
+
+    </div>
+
+  </div>
+</MainLayout>

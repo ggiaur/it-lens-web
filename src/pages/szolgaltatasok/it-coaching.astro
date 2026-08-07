@@ -1,0 +1,102 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import PrismCard from '../../components/PrismCard.astro';
+import Button from '../../components/Button.astro';
+import Badge from '../../components/Badge.astro';
+import AuditForm from '../../components/AuditForm.astro';
+---
+
+<MainLayout 
+  title="IT Coaching & Mentoring — IT LENS"
+  description="Fejlessze belső informatikusát stratégiai partnergé — fenyegetettség helyett mentori támogatással."
+>
+  <div class="py-16 md:py-24 space-y-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Hero -->
+    <div class="text-center max-w-3xl mx-auto space-y-6">
+      <Badge variant="emerald" pulse={true}>Mentori Modell</Badge>
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-white font-['Plus_Jakarta_Sans'] leading-tight">
+        Mentori háttér a belső informatikusnak, nyugalom a cégvezetésnek.
+      </h1>
+      <p class="text-lg text-slate-300 leading-relaxed">
+        A belső IT-s kolléga nincs többé egyedül a komplex technikai döntéseknél. Rendszeres szakmai coachinggal és mentoringgal támogatjuk a fejlődését, és segítünk neki vezetői szinten kommunikálni.
+      </p>
+      <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <Button href="#audit-form" variant="primary" size="lg">
+          Coaching Konzultáció Igénylése
+        </Button>
+        <Button href="/szolgaltatasok" variant="secondary" size="lg">
+          Összes Szolgáltatás
+        </Button>
+      </div>
+    </div>
+
+    <!-- Problems -->
+    <div class="space-y-12">
+      <SectionHeader
+        tag="Helyzetkép"
+        title="A magára hagyott belső informatikus"
+        description="Amikor az 1 fős belső IT túlterhelt és szakmailag elszigetelt."
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <PrismCard title="Túlterheltség & Kiégés" glow="cyan">
+          <p class="text-sm text-slate-300">
+            A belső kolléga egy személyben felel a nyomtatópapírtól a szervermentésig mindenért, ami felőrli a fejlesztési energiákat.
+          </p>
+        </PrismCard>
+
+        <PrismCard title="Szakmai Magány" glow="cyan">
+          <p class="text-sm text-slate-300">
+            Nincs belső szakmai társa, akivel megbeszélhetné a felhős architektúra-változtatásokat vagy a biztonsági aggályokat.
+          </p>
+        </PrismCard>
+
+        <PrismCard title="Félelem a külső audittól" glow="cyan">
+          <p class="text-sm text-slate-300">
+            Attól tart, hogy a külső ellenőrzés az ő hibáit keresi — mi viszont az ő munkájának megerősítésére érkezünk.
+          </p>
+        </PrismCard>
+      </div>
+    </div>
+
+    <!-- Deliverables -->
+    <div class="space-y-12">
+      <SectionHeader
+        tag="Eredmények"
+        title="Mit nyer a belső kolléga és a cégvezetés?"
+        description="Biztonsági háló a kollégának, kiszámíthatóság a vezetőségnek."
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <PrismCard title="Szakmai Biztonsági Háló" badge="Mentoring" glow="emerald">
+          <p class="text-sm text-slate-300">
+            A belső kolléga bármikor konzultálhat egy 20+ éves tapasztalattal rendelkező IT-vezetővel kritikus helyzetekben.
+          </p>
+        </PrismCard>
+
+        <PrismCard title="Strukturált IT Működési Rend" badge="Folyamatok" glow="emerald">
+          <p class="text-sm text-slate-300">
+            Kész leltározási, mentési és biztonsági szabályzatok bevezetése és átadása a belső csapatnak.
+          </p>
+        </PrismCard>
+
+        <PrismCard title="Mérhető Szakmai Fejlődés" badge="Karrier" glow="purple">
+          <p class="text-sm text-slate-300">
+            A belső kolléga reaktív hibaelhárítóból a szervezet megbecsült IT-koordinátorává válik.
+          </p>
+        </PrismCard>
+
+        <PrismCard title="Átlátható Vezetői Riporting" badge="Kontroll" glow="purple">
+          <p class="text-sm text-slate-300">
+            A cégvezetés rendszeres, érthető jelentéseket kap az IT struktúra állapotáról és a belső kolléga haladásáról.
+          </p>
+        </PrismCard>
+      </div>
+    </div>
+
+    <AuditForm id="audit-form" />
+
+  </div>
+</MainLayout>

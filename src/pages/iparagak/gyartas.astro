@@ -1,0 +1,64 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import PrismCard from '../../components/PrismCard.astro';
+import Button from '../../components/Button.astro';
+import Badge from '../../components/Badge.astro';
+import AuditForm from '../../components/AuditForm.astro';
+---
+
+<MainLayout 
+  title="IT Tanácsadás Gyártó és Logisztikai KKV-knak — IT LENS"
+  description="Kiesésmentes termelés és biztonságos IT infrastruktúra gyártó és logisztikai vállalkozások számára."
+>
+  <div class="py-16 md:py-24 space-y-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Hero -->
+    <div class="text-center max-w-3xl mx-auto space-y-6">
+      <Badge variant="emerald" pulse={true}>Gyártás & Logisztika</Badge>
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-white font-['Plus_Jakarta_Sans'] leading-tight">
+        Folyamatos termelés, védett adatok és elakadásmentes logisztika.
+      </h1>
+      <p class="text-lg text-slate-300 leading-relaxed">
+        Gyártó és logisztikai KKV-k számára, ahol egy esetleges IT leállás perceken belül milliós kiesést okoz a termelésben és a szállításban.
+      </p>
+      <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <Button href="#audit-form" variant="primary" size="lg">
+          Gyártási IT Audit Igénylése
+        </Button>
+      </div>
+    </div>
+
+    <!-- Pillars -->
+    <div class="space-y-12">
+      <SectionHeader
+        tag="Fókuszterületek"
+        title="Termelésbiztonság az IT oldalán"
+        description="Amivel megvédjük a telephelyi és üzemi működést."
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <PrismCard title="Zéró Leállás & Redundancia" glow="emerald">
+          <p class="text-sm text-slate-300">
+            Szeverek és hálózati kapcsolatok kettőzése, hogy egyetlen alkatrészhiba se állítsa le a gyártósort.
+          </p>
+        </PrismCard>
+
+        <PrismCard title="Telephelyi VPN & Ipari IT" glow="emerald">
+          <p class="text-sm text-slate-300">
+            Zárt, biztonságos hálózati szegregáció az irodai és az ipari (PLC/SCADA) vezérlőrendszerek között.
+          </p>
+        </PrismCard>
+
+        <PrismCard title="Azonnali Katasztrófa-helyreállítás" glow="emerald">
+          <p class="text-sm text-slate-300">
+            3-2-1 adatmentés tesztelt visszaállítási idővel, zsarolóvírus elleni aktív védelemmel.
+          </p>
+        </PrismCard>
+      </div>
+    </div>
+
+    <AuditForm id="audit-form" />
+
+  </div>
+</MainLayout>

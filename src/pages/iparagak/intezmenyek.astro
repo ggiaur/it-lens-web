@@ -1,0 +1,64 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import PrismCard from '../../components/PrismCard.astro';
+import Button from '../../components/Button.astro';
+import Badge from '../../components/Badge.astro';
+import AuditForm from '../../components/AuditForm.astro';
+---
+
+<MainLayout 
+  title="IT Tanácsadás Közintézményeknek — IT LENS"
+  description="Független IT stratégiai tanácsadás és biztonsági felmérés könyvtárak, múzeumok és közintézmények számára."
+>
+  <div class="py-16 md:py-24 space-y-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Hero -->
+    <div class="text-center max-w-3xl mx-auto space-y-6">
+      <Badge variant="cyan" pulse={true}>Közintézményi Fókusz</Badge>
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-white font-['Plus_Jakarta_Sans'] leading-tight">
+        Biztonságos és átlátható IT működés közintézményeknek.
+      </h1>
+      <p class="text-lg text-slate-300 leading-relaxed">
+        Önálló IT-kapacitással nem rendelkező könyvtárak, múzeumok és önkormányzati intézmények számára. Rendszerfejlesztés, NIS2/ISO elvek szerinti felkészülés és fenntartói átláthatóság.
+      </p>
+      <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <Button href="#audit-form" variant="primary" size="lg">
+          Közintézményi Clarity Audit (Ingyenes)
+        </Button>
+      </div>
+    </div>
+
+    <!-- Challenges -->
+    <div class="space-y-12">
+      <SectionHeader
+        tag="Kihívások"
+        title="Speciális szektorbeli elvárások"
+        description="Amivel az intézményvezetők nap mint nap szembesülnek."
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <PrismCard title="Hiányzó önálló IT-kapacitás" glow="cyan">
+          <p class="text-sm text-slate-300">
+            Az intézményben nincs főállású IT-igazgató, így a technikai és biztonsági döntések az intézményvezető vállára nehezednek.
+          </p>
+        </PrismCard>
+
+        <PrismCard title="Szigorú megfelelőség (NIS2 / Adatvédelem)" glow="cyan">
+          <p class="text-sm text-slate-300">
+            A fenntartó és a jogszabályok megkövetelik a dokumentált adatmentést, a naplózást és az incidenskezelést.
+          </p>
+        </PrismCard>
+
+        <PrismCard title="Költségvetési korlátok & Pályázatok" glow="cyan">
+          <p class="text-sm text-slate-300">
+            Kiszámítható, többéves fejlesztési terv kell, hogy a beruházások beférjenek a költségvetési keretbe.
+          </p>
+        </PrismCard>
+      </div>
+    </div>
+
+    <AuditForm id="audit-form" />
+
+  </div>
+</MainLayout>

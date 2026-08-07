@@ -1,0 +1,77 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import PrismCard from '../../components/PrismCard.astro';
+import Button from '../../components/Button.astro';
+import Badge from '../../components/Badge.astro';
+import AuditForm from '../../components/AuditForm.astro';
+---
+
+<MainLayout 
+  title="IT Biztonsági Ellenőrzőlista Közintézményeknek — IT LENS"
+  description="10 pontból álló technikai és szervezési ellenőrzőlista könyvtárak, múzeumok és közintézmények számára."
+>
+  <div class="py-16 md:py-24 space-y-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Hero -->
+    <div class="text-center max-w-3xl mx-auto space-y-6">
+      <Badge variant="blue" pulse={true}>Intézményi Ellenőrzőlista</Badge>
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-white font-['Plus_Jakarta_Sans'] leading-tight">
+        IT Biztonsági & Megfelelőségi Ellenőrzőlista
+      </h1>
+      <p class="text-lg text-slate-300 leading-relaxed">
+        10 kritikus kérdés, amelyet minden intézményvezetőnek fel kell tennie az informatikai rendszerek biztonságáról.
+      </p>
+    </div>
+
+    <!-- 10 Checklist Items -->
+    <div class="max-w-4xl mx-auto space-y-6">
+      
+      <PrismCard title="1. Adatmentés & Visszaállíthatóság (3-2-1 Elv)" glow="cyan">
+        <p class="text-sm text-slate-300">
+          Van-e legalább egy fizikailag vagy felhőben elkülönített mentési példány, amely egy ransomware fertőzés esetén is sértetlen marad? Megtörtént-e a próba-visszaállítás az elmúlt 6 hónapban?
+        </p>
+      </PrismCard>
+
+      <PrismCard title="2. Kétlépcsős Azonosítás (MFA)" glow="cyan">
+        <p class="text-sm text-slate-300">
+          Kötelező-e az MFA használata az intézményi levelezéshez (M365 / Google Workspace) és a távoli hálózati hozzáférésekhez?
+        </p>
+      </PrismCard>
+
+      <PrismCard title="3. Rendszergazdai Jogosultságok" glow="cyan">
+        <p class="text-sm text-slate-300">
+          Elkülönülnek-e a napi munkára használt felhasználói fiókok a rendszergazdai (admin) jogosultságoktól? A dolgozók tudnak-e önállóan szoftvereket telepíteni?
+        </p>
+      </PrismCard>
+
+      <PrismCard title="4. Hálózati Szegregáció & Publikus Wi-Fi" glow="cyan">
+        <p class="text-sm text-slate-300">
+          Szigorúan el van-e választva a látogatói / olvasói Wi-Fi hálózat az intézmény belső adminisztratív és adatbázis-hálózatától?
+        </p>
+      </PrismCard>
+
+      <PrismCard title="5. Naprakész Hardver & Szoftver Leltár" glow="cyan">
+        <p class="text-sm text-slate-300">
+          Létezik-e pontos, dokumentált nyilvántartás az intézményben működő számítógépekről, szerverekről, licencekről és garanciákról?
+        </p>
+      </PrismCard>
+
+    </div>
+
+    <div class="text-center pt-8">
+      <PrismCard variant="accent" glow="cyan" padding="lg" class="max-w-3xl mx-auto">
+        <h3 class="text-2xl font-bold text-white mb-3">Szeretné szakértővel átnézni ezeket a pontokat?</h3>
+        <p class="text-slate-300 mb-6">
+          Kérje a díjmentes 45 perces Quick Clarity Auditot, és 5 oldalas kiértékelő scorecardot adunk át.
+        </p>
+        <Button href="#audit-form" variant="primary" size="lg">
+          Kérem a Díjmentes Auditot
+        </Button>
+      </PrismCard>
+    </div>
+
+    <AuditForm id="audit-form" />
+
+  </div>
+</MainLayout>
