@@ -3,9 +3,9 @@ import Button from './Button.astro';
 import Badge from './Badge.astro';
 ---
 
-<div class="relative rounded-3xl border border-cyan-500/30 bg-slate-950/90 p-8 sm:p-12 backdrop-blur-2xl shadow-2xl overflow-hidden">
+<div class="relative rounded-3xl border border-cyan-500/40 bg-[#132442]/90 p-8 sm:p-12 backdrop-blur-2xl shadow-2xl overflow-hidden">
   <!-- Glowing Background spot -->
-  <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-96 h-96 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl pointer-events-none"></div>
 
   <div class="max-w-3xl mx-auto space-y-8 relative z-10 text-center">
     
@@ -20,14 +20,14 @@ import Badge from './Badge.astro';
     </div>
 
     <!-- Calculator Questions -->
-    <div id="calculator-app" class="space-y-6 text-left bg-slate-900/80 p-6 sm:p-8 rounded-2xl border border-slate-800">
+    <div id="calculator-app" class="space-y-6 text-left bg-[#0c182e]/90 p-6 sm:p-8 rounded-2xl border border-blue-900/60">
       
       <!-- Question 1 -->
       <div class="space-y-2">
         <label class="block text-sm font-semibold text-slate-200">
           1. Rendelkezik-e fizikailag vagy felhőben elkülönített, mentett adatmentéssel?
         </label>
-        <select class="calc-input w-full p-2.5 rounded-xl bg-slate-950 border border-slate-700 text-sm text-slate-200">
+        <select class="calc-input w-full p-2.5 rounded-xl bg-[#132442] border border-blue-800/60 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-cyan-400">
           <option value="20">Igen, és rendszeresen teszteljük a visszaállítást (20 pont)</option>
           <option value="10">Igen, van mentés, de nem teszteljük (10 pont)</option>
           <option value="0">Nem tudom / Nincs mentés (0 pont)</option>
@@ -39,7 +39,7 @@ import Badge from './Badge.astro';
         <label class="block text-sm font-semibold text-slate-200">
           2. Használnak-e kétlépcsős azonosítást (MFA) a céges levelezésben?
         </label>
-        <select class="calc-input w-full p-2.5 rounded-xl bg-slate-950 border border-slate-700 text-sm text-slate-200">
+        <select class="calc-input w-full p-2.5 rounded-xl bg-[#132442] border border-blue-800/60 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-cyan-400">
           <option value="20">Minden munkatársnak kötelező (20 pont)</option>
           <option value="10">Csak a vezetőknek / egyes felhasználóknak (10 pont)</option>
           <option value="0">Nem hasznáunk MFA-t (0 pont)</option>
@@ -51,7 +51,7 @@ import Badge from './Badge.astro';
         <label class="block text-sm font-semibold text-slate-200">
           3. Létezik-e naprakész hardver- és szoftverleltár, jelszókezelővel?
         </label>
-        <select class="calc-input w-full p-2.5 rounded-xl bg-slate-950 border border-slate-700 text-sm text-slate-200">
+        <select class="calc-input w-full p-2.5 rounded-xl bg-[#132442] border border-blue-800/60 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-cyan-400">
           <option value="20">Igen, teljes és dokumentált (20 pont)</option>
           <option value="10">Részben van meg (10 pont)</option>
           <option value="0">Nincs dokumentáció, 1 kolléga fejében van meg (0 pont)</option>
@@ -63,7 +63,7 @@ import Badge from './Badge.astro';
         <label class="block text-sm font-semibold text-slate-200">
           4. Van-e kiszámítható 3-5 éves IT fejlesztési és költségvetési terv?
         </label>
-        <select class="calc-input w-full p-2.5 rounded-xl bg-slate-950 border border-slate-700 text-sm text-slate-200">
+        <select class="calc-input w-full p-2.5 rounded-xl bg-[#132442] border border-blue-800/60 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-cyan-400">
           <option value="20">Igen, előre tervezett büdzsével (20 pont)</option>
           <option value="10">Ad-hoc jelleggel tervezünk (10 pont)</option>
           <option value="0">Nincs terv, csak meglepetésszerű számlák vannak (0 pont)</option>
@@ -75,16 +75,16 @@ import Badge from './Badge.astro';
         <label class="block text-sm font-semibold text-slate-200">
           5. Szét van-e választva a vendég Wi-Fi a belső irodai/adatbázis hálózattól?
         </label>
-        <select class="calc-input w-full p-2.5 rounded-xl bg-slate-950 border border-slate-700 text-sm text-slate-200">
+        <select class="calc-input w-full p-2.5 rounded-xl bg-[#132442] border border-blue-800/60 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-cyan-400">
           <option value="20">Igen, teljesen szegregált (20 pont)</option>
           <option value="10">Nem tudom biztosan (10 pont)</option>
           <option value="0">Ugyanazon a hálózaton vannak (0 pont)</option>
         </select>
       </div>
 
-      <div class="pt-4 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="pt-4 border-t border-blue-900/60 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div>
-          <span class="text-xs text-slate-400">Kalkulált Érettségi Pontszám:</span>
+          <span class="text-xs text-slate-300">Kalkulált Érettségi Pontszám:</span>
           <div id="calc-score" class="text-3xl font-extrabold text-cyan-400 font-mono">100 / 100</div>
         </div>
         <Button href="/audit" variant="primary" size="md">

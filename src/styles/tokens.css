@@ -1,11 +1,11 @@
-/* IT LENS Optical Design System Tokens */
+/* IT LENS Optical Design System Tokens - Deep Navy Theme */
 :root {
-  /* Brand Primary Colors */
-  --color-obsidian: #070a12;
-  --color-navy-dark: #0b1120;
-  --color-navy-card: #111827;
-  --color-navy-surface: #1e293b;
-  --color-navy-border: #334155;
+  /* Brand Deep Navy Colors (No Pure Black) */
+  --color-obsidian: #0c182e;      /* Main Page Deep Navy Background */
+  --color-navy-dark: #112244;     /* Dark Navy Section Background */
+  --color-navy-card: #172a52;     /* Card Navy Surface */
+  --color-navy-surface: #1e3868;  /* Elevated Navy Elements */
+  --color-navy-border: #284b85;   /* Subtle Navy Border */
 
   /* Accent & Energy Colors */
   --color-blue-primary: #2563eb;
@@ -20,31 +20,31 @@
   --color-rose-danger: #f43f5e;
 
   /* Typography Text Tokens */
-  --color-text-heading: #f8fafc;
+  --color-text-heading: #ffffff;
   --color-text-body: #e2e8f0;
   --color-text-muted: #94a3b8;
   --color-text-subtle: #64748b;
 
   /* Optical Glassmorphism Tokens */
-  --glass-bg: rgba(15, 23, 42, 0.75);
-  --glass-bg-hover: rgba(30, 41, 59, 0.85);
-  --glass-border: rgba(255, 255, 255, 0.12);
-  --glass-border-hover: rgba(6, 182, 212, 0.5);
+  --glass-bg: rgba(17, 34, 68, 0.85);
+  --glass-bg-hover: rgba(26, 46, 86, 0.9);
+  --glass-border: rgba(96, 165, 250, 0.2);
+  --glass-border-hover: rgba(6, 182, 212, 0.6);
   --glass-blur: blur(16px);
   --glass-blur-heavy: blur(24px);
 
   /* Prism Gradients */
-  --gradient-prism: linear-gradient(135deg, rgba(6, 182, 212, 0.4) 0%, rgba(37, 99, 235, 0.25) 50%, rgba(139, 92, 246, 0.35) 100%);
-  --gradient-prism-border: linear-gradient(135deg, rgba(0, 242, 254, 0.6), rgba(37, 99, 235, 0.3), rgba(139, 92, 246, 0.5));
+  --gradient-prism: linear-gradient(135deg, rgba(6, 182, 212, 0.4) 0%, rgba(37, 99, 235, 0.3) 50%, rgba(139, 92, 246, 0.35) 100%);
+  --gradient-prism-border: linear-gradient(135deg, rgba(0, 242, 254, 0.6), rgba(37, 99, 235, 0.4), rgba(139, 92, 246, 0.5));
   --gradient-button-primary: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
   --gradient-button-primary-hover: linear-gradient(135deg, #1d4ed8 0%, #0891b2 100%);
-  --gradient-lens-glow: radial-gradient(circle at 50% 0%, rgba(6, 182, 212, 0.2), transparent 70%);
+  --gradient-lens-glow: radial-gradient(circle at 50% 0%, rgba(6, 182, 212, 0.25), transparent 70%);
 
   /* Optical Glow Shadows */
   --glow-cyan: 0 0 25px -5px rgba(6, 182, 212, 0.4);
   --glow-blue: 0 0 25px -5px rgba(37, 99, 235, 0.4);
-  --glow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
-  --glow-card-hover: 0 20px 40px -12px rgba(6, 182, 212, 0.25);
+  --glow-card: 0 10px 30px -10px rgba(12, 24, 46, 0.8);
+  --glow-card-hover: 0 20px 40px -12px rgba(6, 182, 212, 0.3);
   --glow-button: 0 4px 20px rgba(6, 182, 212, 0.35);
 
   /* Radii & Transitions */
@@ -74,6 +74,6 @@
 .bg-tech-grid {
   background-size: 40px 40px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgba(96, 165, 250, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(96, 165, 250, 0.05) 1px, transparent 1px);
 }

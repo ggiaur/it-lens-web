@@ -29,17 +29,17 @@ const paddingStyles = {
 };
 
 const glowStyles = {
-  cyan: "group-hover:shadow-[0_0_35px_-5px_rgba(6,182,212,0.3)] border-slate-800 hover:border-cyan-500/50",
-  blue: "group-hover:shadow-[0_0_35px_-5px_rgba(37,99,235,0.3)] border-slate-800 hover:border-blue-500/50",
-  purple: "group-hover:shadow-[0_0_35px_-5px_rgba(139,92,246,0.3)] border-slate-800 hover:border-purple-500/50",
-  none: "border-slate-800"
+  cyan: "group-hover:shadow-[0_0_35px_-5px_rgba(6,182,212,0.35)] border-blue-900/50 hover:border-cyan-500/60",
+  blue: "group-hover:shadow-[0_0_35px_-5px_rgba(37,99,235,0.35)] border-blue-900/50 hover:border-blue-400/60",
+  purple: "group-hover:shadow-[0_0_35px_-5px_rgba(139,92,246,0.35)] border-blue-900/50 hover:border-purple-400/60",
+  none: "border-blue-900/50"
 };
 
 const variantBg = {
-  default: "bg-slate-900/80 backdrop-blur-xl",
-  accent: "bg-gradient-to-b from-slate-900/90 to-slate-950/90 backdrop-blur-xl border-t-2 border-t-cyan-400",
-  glass: "bg-slate-950/60 backdrop-blur-2xl border-white/10",
-  interactive: "bg-slate-900/70 hover:bg-slate-900/90 backdrop-blur-xl cursor-pointer hover:-translate-y-1 transition-all duration-300"
+  default: "bg-[#132442]/85 backdrop-blur-xl",
+  accent: "bg-gradient-to-b from-[#152747]/95 to-[#0e1a32]/95 backdrop-blur-xl border-t-2 border-t-cyan-400",
+  glass: "bg-[#10203d]/70 backdrop-blur-2xl border-blue-800/40",
+  interactive: "bg-[#132442]/75 hover:bg-[#182c50]/90 backdrop-blur-xl cursor-pointer hover:-translate-y-1 transition-all duration-300"
 };
 
 const Element = href ? 'a' : 'div';
@@ -57,10 +57,10 @@ const Element = href ? 'a' : 'div';
   {...restProps}
 >
   <!-- Top Prism Optical Light Sweep -->
-  <div class="absolute -top-[1px] left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+  <div class="absolute -top-[1px] left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-400/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
   <!-- Radial Background Glow Lens -->
-  <div class="absolute -top-24 -right-24 w-48 h-48 rounded-full bg-cyan-500/10 blur-3xl group-hover:bg-cyan-400/20 transition-all duration-500 pointer-events-none"></div>
+  <div class="absolute -top-24 -right-24 w-48 h-48 rounded-full bg-cyan-500/15 blur-3xl group-hover:bg-cyan-400/25 transition-all duration-500 pointer-events-none"></div>
 
   { (title || badge || Astro.slots.has('header')) && (
     <div class="flex items-center justify-between gap-4 mb-4 z-10 relative">
@@ -70,7 +70,7 @@ const Element = href ? 'a' : 'div';
         </h3>
       )}
       {badge && (
-        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-cyan-950/80 text-cyan-300 border border-cyan-500/30">
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-cyan-950/80 text-cyan-300 border border-cyan-500/40">
           {badge}
         </span>
       )}
@@ -83,7 +83,7 @@ const Element = href ? 'a' : 'div';
   </div>
 
   {Astro.slots.has('footer') && (
-    <div class="mt-6 pt-4 border-t border-slate-800/80 relative z-10 flex items-center justify-between">
+    <div class="mt-6 pt-4 border-t border-blue-900/60 relative z-10 flex items-center justify-between">
       <slot name="footer" />
     </div>
   )}
