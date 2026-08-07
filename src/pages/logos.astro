@@ -5,60 +5,120 @@ import PrismCard from '../components/PrismCard.astro';
 import Badge from '../components/Badge.astro';
 ---
 
-<MainLayout title="Concept 2 Nagy Pupillás Változatok — IT LENS">
+<MainLayout title="Az Összes Logó Variáció — IT LENS">
   <div class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
     
     <div class="text-center max-w-3xl mx-auto space-y-4">
-      <Badge variant="cyan" pulse={true}>Továbbfejlesztett 2-es Koncepció</Badge>
+      <Badge variant="cyan" pulse={true}>Összes Logó Egy Helyen</Badge>
       <h1 class="text-4xl sm:text-5xl font-extrabold text-white font-['Plus_Jakarta_Sans']">
-        IT LENS — Concept 2 Nagy Pupillával
+        IT LENS — Teljes Logó Kollekció (11 Terv)
       </h1>
       <p class="text-slate-300 text-lg">
-        Az eredeti 2-es geometriai hálózati lencse megnövelt, tágabb belső pupillanyílással.
+        Minden eddig elkészült alapkoncepció, kombinált verzió és finomított változat hiánytalanul.
       </p>
     </div>
 
-    <!-- Wide Pupil Options -->
+    <!-- Section 1: Original 5 Concepts -->
     <div class="space-y-8">
       <SectionHeader
-        tag="Módosított 2-es változatok"
-        title="Nagy Pupillás Logó Tervek"
-        description="A teljes hálózati keret és a fénycsóvák változatlanok maradtak, kizárólag a központi lencsenyílás lett tágabb."
+        tag="Eredeti Alapkoncepciók (1-5)"
+        title="1. Az Első 5 Arculati Terv"
+        description="A legelső sorozatban generált eredeti logó változatok."
       />
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         
-        <!-- Wide A -->
-        <PrismCard title="Concept 2 — Nagy Pupilla A (Ring Focus)" badge="2-es Változat A" glow="cyan" padding="lg" variant="accent">
-          <div class="aspect-square rounded-2xl overflow-hidden mb-6 border border-cyan-500/50 shadow-2xl">
-            <img src="/logos/concept-2-wide-a.jpg" alt="Concept 2 Wide A" class="w-full h-full object-cover" />
+        <PrismCard title="1. Cybernetic Lens Focus" badge="Koncepció 1" glow="cyan">
+          <div class="aspect-square rounded-xl overflow-hidden mb-3 border border-blue-800/60 shadow-md">
+            <img src="/logos/logo-1.jpg" alt="Concept 1" class="w-full h-full object-cover" />
           </div>
-          <p class="text-xs text-slate-300">Tágabb, nyitott belső fókuszgyűrű és az eredeti 'IT LENS' felirat.</p>
+          <p class="text-xs text-slate-300">Optikai kamera lencse és célkereszt hálózat.</p>
         </PrismCard>
 
-        <!-- Wide B -->
-        <PrismCard title="Concept 2 — Nagy Pupilla B (Optical Lens)" badge="2-es Változat B" glow="blue" padding="lg" variant="accent">
-          <div class="aspect-square rounded-2xl overflow-hidden mb-6 border border-blue-500/50 shadow-2xl">
-            <img src="/logos/concept-2-wide-b.jpg" alt="Concept 2 Wide B" class="w-full h-full object-cover" />
+        <PrismCard title="2. Digital Network Aperture" badge="Eredeti 2-es" glow="cyan" variant="accent">
+          <div class="aspect-square rounded-xl overflow-hidden mb-3 border-2 border-cyan-400 shadow-xl">
+            <img src="/logos/logo-2.jpg" alt="Concept 2 Original" class="w-full h-full object-cover" />
           </div>
-          <p class="text-xs text-slate-300">Blende szirmok és megnövelt központi kristály lencse pupilla.</p>
+          <p class="text-xs text-slate-200 font-semibold">Hexagonális lencse blende hálózati csomópontokkal (Eredeti 2-es).</p>
+        </PrismCard>
+
+        <PrismCard title="3. Refraction Optical Prism" badge="Koncepció 3" glow="purple">
+          <div class="aspect-square rounded-xl overflow-hidden mb-3 border border-blue-800/60 shadow-md">
+            <img src="/logos/logo-3.jpg" alt="Concept 3" class="w-full h-full object-cover" />
+          </div>
+          <p class="text-xs text-slate-300">Kristály prizma központi fókusz fénysugárral.</p>
+        </PrismCard>
+
+        <PrismCard title="4. Monogram ITL Focus Ring" badge="Koncepció 4" glow="blue">
+          <div class="aspect-square rounded-xl overflow-hidden mb-3 border border-blue-800/60 shadow-md">
+            <img src="/logos/logo-4.jpg" alt="Concept 4" class="w-full h-full object-cover" />
+          </div>
+          <p class="text-xs text-slate-300">ITL monogram lencse fókuszringben.</p>
+        </PrismCard>
+
+        <PrismCard title="5. Minimalist Geometric Aperture" badge="Koncepció 5" glow="emerald">
+          <div class="aspect-square rounded-xl overflow-hidden mb-3 border border-blue-800/60 shadow-md">
+            <img src="/logos/logo-5.jpg" alt="Concept 5" class="w-full h-full object-cover" />
+          </div>
+          <p class="text-xs text-slate-300">Egymásba fonódó geometriai ívek fókuszponttal.</p>
         </PrismCard>
 
       </div>
     </div>
 
-    <!-- Original Concept 2 reference -->
+    <!-- Section 2: Combined Concepts -->
     <div class="space-y-8 pt-8 border-t border-blue-900/40">
       <SectionHeader
-        tag="Előzmény"
-        title="Eredeti 2-es Koncepció"
-        description="Amely alapján a fenti megnövelt pupillájú változatok készültek."
+        tag="Fúziós Tervek"
+        title="2. Kombinált Változatok (1, 2, 4 Ötvözete)"
+        description="A 2-es forma, az 1-es felirat és a 4-es monogram egyesítései."
       />
 
-      <div class="max-w-md mx-auto">
-        <PrismCard title="Eredeti Concept 2" badge="Referencia" glow="cyan">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <PrismCard title="Kombináció A" badge="Kombinált A" glow="cyan">
           <div class="aspect-square rounded-xl overflow-hidden mb-3 border border-blue-800/60 shadow-md">
-            <img src="/logos/logo-2.jpg" alt="Original Logo Concept 2" class="w-full h-full object-cover" />
+            <img src="/logos/combined-a.jpg" alt="Combined A" class="w-full h-full object-cover" />
+          </div>
+        </PrismCard>
+
+        <PrismCard title="Kombináció B" badge="Kombinált B" glow="blue">
+          <div class="aspect-square rounded-xl overflow-hidden mb-3 border border-blue-800/60 shadow-md">
+            <img src="/logos/combined-b.jpg" alt="Combined B" class="w-full h-full object-cover" />
+          </div>
+        </PrismCard>
+
+        <PrismCard title="Végleges Terv 1" badge="Végleges 1" glow="cyan">
+          <div class="aspect-square rounded-xl overflow-hidden mb-3 border border-blue-800/60 shadow-md">
+            <img src="/logos/final-1.jpg" alt="Final 1" class="w-full h-full object-cover" />
+          </div>
+        </PrismCard>
+
+        <PrismCard title="Végleges Terv 2" badge="Végleges 2" glow="purple">
+          <div class="aspect-square rounded-xl overflow-hidden mb-3 border border-blue-800/60 shadow-md">
+            <img src="/logos/final-2.jpg" alt="Final 2" class="w-full h-full object-cover" />
+          </div>
+        </PrismCard>
+      </div>
+    </div>
+
+    <!-- Section 3: Concept 2 Wide Pupil Variations -->
+    <div class="space-y-8 pt-8 border-t border-blue-900/40">
+      <SectionHeader
+        tag="2-es Módosítások"
+        title="3. 2-es Koncepció Megnövelt Pupillával"
+        description="A 2-es minta tágított belső fókusznyílással rendelkező változatai."
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <PrismCard title="Concept 2 — Nagy Pupilla A" badge="2-es Wide A" glow="cyan">
+          <div class="aspect-square rounded-xl overflow-hidden mb-3 border border-blue-800/60 shadow-md">
+            <img src="/logos/concept-2-wide-a.jpg" alt="Concept 2 Wide A" class="w-full h-full object-cover" />
+          </div>
+        </PrismCard>
+
+        <PrismCard title="Concept 2 — Nagy Pupilla B" badge="2-es Wide B" glow="blue">
+          <div class="aspect-square rounded-xl overflow-hidden mb-3 border border-blue-800/60 shadow-md">
+            <img src="/logos/concept-2-wide-b.jpg" alt="Concept 2 Wide B" class="w-full h-full object-cover" />
           </div>
         </PrismCard>
       </div>
