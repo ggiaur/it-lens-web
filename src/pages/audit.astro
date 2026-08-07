@@ -1,0 +1,93 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import AuditTable from '../components/AuditTable.astro';
+import AuditForm from '../components/AuditForm.astro';
+import PrismCard from '../components/PrismCard.astro';
+import Badge from '../components/Badge.astro';
+---
+
+<MainLayout 
+  title="IT Audit & Clarity Scorecard — IT LENS"
+  description="Díjmentes Quick Clarity Audit és mélyreható Deep System Lens Audit kkv-k és közintézmények számára. Rálátás, kontroll és konkrét fejlesztési roadmap."
+>
+  <div class="py-16 md:py-24 space-y-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Hero Section -->
+    <div class="text-center max-w-3xl mx-auto space-y-6">
+      <Badge variant="cyan" pulse={true}>Tiszta Rálátás & Kontroll</Badge>
+      
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white font-['Plus_Jakarta_Sans'] leading-tight tracking-tight">
+        Lássa pontosan, hol tart az IT infrastruktúrája.
+      </h1>
+
+      <p class="text-lg text-slate-300 leading-relaxed">
+        Az IT Audit segítségével azonosítjuk a rejtett biztonsági kockázatokat, az elavult dokumentációkat és a szűk keresztmetszeteket — érthető döntéshozói nyelvben, szakzsargon nélkül.
+      </p>
+    </div>
+
+    <!-- Comparison Table Section -->
+    <div class="space-y-8">
+      <SectionHeader
+        tag="Ajánlataink"
+        title="Válassza ki az Önnek megfelelő audit szintet"
+        description="A gyors helyzetértékeléstől a több napos mélyreható architektúra-elemzésig."
+      />
+
+      <AuditTable />
+    </div>
+
+    <!-- What's included in the Audit Scorecard? -->
+    <div class="space-y-12">
+      <SectionHeader
+        tag="Módszertan"
+        title="Az audit 5 pillére"
+        description="Minden felmérésünk 5 kritikus üzleti és technológiai dimenzióra terjed ki."
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <PrismCard title="1. IT Biztonság & Mentés" badge="Kritikus" glow="cyan">
+          <p class="text-sm text-slate-300">
+            Adatmentések visszaállíthatóságának ellenőrzése, zsarolóvírus elleni védelem és hozzáférés-kezelés.
+          </p>
+        </PrismCard>
+
+        <PrismCard title="2. Dokumentáció & Tudás" badge="Üzemeltetés" glow="blue">
+          <p class="text-sm text-slate-300">
+            Hardver- és szoftverleltár, hálózati topológia és szállítói szerződések átláthatósága.
+          </p>
+        </PrismCard>
+
+        <PrismCard title="3. Folyamatok & SLA" badge="Működés" glow="purple">
+          <p class="text-sm text-slate-300">
+            Rendszergaranciák, válaszidők, reakciókészség és üzemeltetői függőségek feltárása.
+          </p>
+        </PrismCard>
+
+        <PrismCard title="4. Megfelelőség (NIS2 / ISO)" badge="Jogi" glow="emerald">
+          <p class="text-sm text-slate-300">
+            Közintézményi és szabályozott szektorbeli előírásoknak való megfelelőségi szint kiértékelése.
+          </p>
+        </PrismCard>
+
+        <PrismCard title="5. Kapacitás & Jövőkép" badge="Fejlődés" glow="cyan">
+          <p class="text-sm text-slate-300">
+            Költségoptimalizálás, felhős stratégiák és automatizációs lehetőségek felmérése.
+          </p>
+        </PrismCard>
+
+        <PrismCard title="Vezetői Összefoglaló" badge="Deliverable" glow="blue">
+          <p class="text-sm text-slate-300">
+            Közvetlenül használható, pontozott scorecard és prioritási sorrendbe állított cselekvési terv.
+          </p>
+        </PrismCard>
+      </div>
+    </div>
+
+    <!-- Form Section -->
+    <div>
+      <AuditForm id="audit-form" />
+    </div>
+
+  </div>
+</MainLayout>

@@ -1,0 +1,42 @@
+---
+interface Props {
+  tag?: string;
+  title: string;
+  description?: string;
+  align?: 'left' | 'center';
+  class?: string;
+}
+
+const {
+  tag,
+  title,
+  description,
+  align = 'center',
+  class: className = ''
+} = Astro.props;
+---
+
+<div class:list={[
+  "max-w-3xl space-y-4 mb-14 md:mb-16",
+  align === 'center' ? 'mx-auto text-center' : 'text-left',
+  className
+]}>
+  {tag && (
+    <div class:list={["flex", align === 'center' ? 'justify-center' : 'justify-start']}>
+      <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-950/70 border border-cyan-500/30 text-cyan-400 text-xs font-bold uppercase tracking-widest">
+        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+        {tag}
+      </span>
+    </div>
+  )}
+
+  <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-['Plus_Jakarta_Sans'] tracking-tight leading-tight">
+    {title}
+  </h2>
+
+  {description && (
+    <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed">
+      {description}
+    </p>
+  )}
+</div>

@@ -1,0 +1,81 @@
+---
+import Button from './Button.astro';
+import Badge from './Badge.astro';
+---
+
+<div class="w-full overflow-hidden rounded-2xl border border-slate-800 bg-slate-950/80 backdrop-blur-xl shadow-2xl">
+  <div class="overflow-x-auto">
+    <table class="w-full text-left border-collapse min-w-[640px]">
+      <thead>
+        <tr class="border-b border-slate-800 bg-slate-900/60">
+          <th class="p-6 text-sm font-semibold text-slate-400 w-1/3">Jellemző / Kritérium</th>
+          <th class="p-6 text-base font-bold text-cyan-300 w-1/3 bg-cyan-950/20 border-x border-slate-800/80">
+            <div class="flex items-center justify-between">
+              <span>Quick Clarity Audit</span>
+              <Badge variant="cyan" size="sm">Díjmentes</Badge>
+            </div>
+          </th>
+          <th class="p-6 text-base font-bold text-blue-300 w-1/3 bg-blue-950/20">
+            <div class="flex items-center justify-between">
+              <span>Deep System Lens Audit</span>
+              <Badge variant="purple" size="sm">Stratégiai</Badge>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-slate-800/80 text-sm">
+        
+        <!-- Row 1: Ár -->
+        <tr class="hover:bg-slate-900/40 transition-colors">
+          <td class="p-5 font-medium text-slate-300">Befektetés / Árazás</td>
+          <td class="p-5 font-bold text-cyan-400 bg-cyan-950/10 border-x border-slate-800/60">0 Ft (Díjmentes)</td>
+          <td class="p-5 font-bold text-blue-300 bg-blue-950/10 font-mono">250.000 – 500.000 Ft + ÁFA</td>
+        </tr>
+
+        <!-- Row 2: Időtartam -->
+        <tr class="hover:bg-slate-900/40 transition-colors">
+          <td class="p-5 font-medium text-slate-300">Időráfordítás</td>
+          <td class="p-5 text-slate-200 bg-cyan-950/10 border-x border-slate-800/60">45 perces online megbeszélés</td>
+          <td class="p-5 text-slate-200 bg-blue-950/10">3–5 nap (Helyszíni + távoli felmérés)</td>
+        </tr>
+
+        <!-- Row 3: Deliverables -->
+        <tr class="hover:bg-slate-900/40 transition-colors">
+          <td class="p-5 font-medium text-slate-300">Végeredmény / Deliverables</td>
+          <td class="p-5 text-slate-200 bg-cyan-950/10 border-x border-slate-800/60">5 oldalas Vezetői Scorecard</td>
+          <td class="p-5 text-slate-200 bg-blue-950/10">30+ oldalas Döntéshozói Jelentés & ISO/NIS2 Roadmap</td>
+        </tr>
+
+        <!-- Row 4: Vizsgálati mélység -->
+        <tr class="hover:bg-slate-900/40 transition-colors">
+          <td class="p-5 font-medium text-slate-300">Vizsgálat terjedelme</td>
+          <td class="p-5 text-slate-300 bg-cyan-950/10 border-x border-slate-800/60">Legégetőbb kockázatok és hiányosságok azonosítása</td>
+          <td class="p-5 text-slate-300 bg-blue-950/10">Teljes hálózati, jogosultsági, mentési és biztonsági architektúra</td>
+        </tr>
+
+        <!-- Row 5: Kinek ajánlott -->
+        <tr class="hover:bg-slate-900/40 transition-colors">
+          <td class="p-5 font-medium text-slate-300">Kinek szól?</td>
+          <td class="p-5 text-slate-300 bg-cyan-950/10 border-x border-slate-800/60">Gyors helyzetképet kereső vezetőnek / intézményfejnek</td>
+          <td class="p-5 text-slate-300 bg-blue-950/10">Nagyobb átalakítás, NIS2 audit vagy beszállító-váltás előtt állóknak</td>
+        </tr>
+
+        <!-- Row 6: Akció gombok -->
+        <tr class="bg-slate-900/30">
+          <td class="p-6 font-semibold text-slate-400">Igénylés</td>
+          <td class="p-6 bg-cyan-950/20 border-x border-slate-800/80">
+            <Button href="#audit-form" variant="primary" size="sm" class="w-full">
+              Scorecard Igénylése
+            </Button>
+          </td>
+          <td class="p-6 bg-blue-950/20">
+            <Button href="#audit-form" variant="secondary" size="sm" class="w-full">
+              Deep Audit Ajánlatkérés
+            </Button>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>

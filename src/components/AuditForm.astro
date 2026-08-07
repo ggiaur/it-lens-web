@@ -1,0 +1,124 @@
+---
+import Button from './Button.astro';
+
+interface Props {
+  id?: string;
+  class?: string;
+}
+
+const { id = "audit-form", class: className = "" } = Astro.props;
+---
+
+<div id={id} class:list={[
+  "relative rounded-3xl border border-slate-800 bg-slate-950/90 p-8 sm:p-10 backdrop-blur-2xl shadow-2xl overflow-hidden",
+  className
+]}>
+  <!-- Ambient Light Flare -->
+  <div class="absolute -top-32 -right-32 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-xl mx-auto space-y-6 relative z-10">
+    <div class="text-center space-y-2">
+      <h3 class="text-2xl font-extrabold text-white font-['Plus_Jakarta_Sans']">
+        Igényelje az IT Auditot
+      </h3>
+      <p class="text-sm text-slate-400">
+        Töltse ki az alábbi űrlapot, és 24 órán belül felvesszük Önnel a kapcsolatot a részletek egyeztetésére.
+      </p>
+    </div>
+
+    <form class="space-y-4 text-left" onsubmit="event.preventDefault(); alert('Köszönjük az igénylést! Hamarosan keresni fogjuk.');">
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5" for="name">
+            Teljes Név *
+          </label>
+          <input
+            type="text"
+            id="name"
+            required
+            placeholder="Kovács István"
+            class="w-full px-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-700/80 text-white placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all"
+          />
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5" for="company">
+            Cég / Intézmény *
+          </label>
+          <input
+            type="text"
+            id="company"
+            required
+            placeholder="Városi Könyvtár / IT Lens Kft."
+            class="w-full px-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-700/80 text-white placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all"
+          />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5" for="email">
+            E-mail Cím *
+          </label>
+          <input
+            type="email"
+            id="email"
+            required
+            placeholder="kovacs.istvan@szervezet.hu"
+            class="w-full px-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-700/80 text-white placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all"
+          />
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5" for="phone">
+            Telefonszám
+          </label>
+          <input
+            type="tel"
+            id="phone"
+            placeholder="+36 30 123 4567"
+            class="w-full px-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-700/80 text-white placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5" for="audit-type">
+          Választott Audit Típus
+        </label>
+        <select
+          id="audit-type"
+          class="w-full px-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-700/80 text-white text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all"
+        >
+          <option value="quick">Quick Clarity Audit (45 perc, Ingyenes Scorecard)</option>
+          <option value="deep">Deep System Lens Audit (Teljes körű elemzés & Árajánlat)</option>
+          <option value="advisory">Független IT Tanácsadás / Coaching konzultáció</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5" for="message">
+          Rövid megjegyzés / Jelenlegi kihívás
+        </label>
+        <textarea
+          id="message"
+          rows="3"
+          placeholder="Pl. NIS2 felkészülés, hiányzó dokumentáció, lassú IT infrastruktúra..."
+          class="w-full px-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-700/80 text-white placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all"
+        ></textarea>
+      </div>
+
+      <div class="pt-2">
+        <Button type="submit" variant="primary" size="lg" fullWidth={true}>
+          Kérem a Díjmentes Auditot / Ajánlatot
+        </Button>
+      </div>
+
+      <p class="text-[11px] text-slate-500 text-center pt-2">
+        A megadott adatokat bizalmasan kezeljük. Nincs kötelezettség, nincs spam.
+      </p>
+
+    </form>
+  </div>
+</div>

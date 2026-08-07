@@ -1,0 +1,101 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import PrismCard from '../components/PrismCard.astro';
+import Button from '../components/Button.astro';
+import Badge from '../components/Badge.astro';
+---
+
+<MainLayout 
+  title="Szolgáltatások — IT LENS"
+  description="Független IT tanácsadás, infrastruktúra audit, NIS2/ISO felkészítés és AI automatizáció kkv-k és intézmények számára."
+>
+  <div class="py-16 md:py-24 space-y-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto space-y-6">
+      <Badge variant="purple" pulse={true}>Szolgáltatásaink</Badge>
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-white font-['Plus_Jakarta_Sans'] tracking-tight">
+        Stratégiai IT Tanácsadás & Rendszerfejlesztés
+      </h1>
+      <p class="text-lg text-slate-300 leading-relaxed">
+        Nem külső üzemeltetőként, hanem független stratégiai partnerként segítjük a döntéshozókat az informatikai kontroll visszaszerzésében.
+      </p>
+    </div>
+
+    <!-- Main Service Pillars -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      
+      <PrismCard title="IT Audit & Diagnosztika" badge="Alapvető" glow="cyan" padding="lg">
+        <p class="text-slate-300 mb-6 leading-relaxed">
+          Átvilágítjuk a meglévő IT infrastruktúrát, felderítjük a biztonsági réseket és a hiányzó dokumentációkat.
+        </p>
+        <ul class="space-y-2.5 text-sm text-slate-400 mb-8">
+          <li class="flex items-center gap-2"><span class="text-cyan-400">✓</span> Quick Clarity Audit (45 perces díjmentes scorecard)</li>
+          <li class="flex items-center gap-2"><span class="text-cyan-400">✓</span> Deep System Lens Audit (30+ oldalas döntéshozói elemzés)</li>
+          <li class="flex items-center gap-2"><span class="text-cyan-400">✓</span> Független szállítói és licenc felülvizsgálat</li>
+        </ul>
+        <div slot="footer">
+          <Button href="/audit" variant="outline" size="sm">Audit Részletek</Button>
+        </div>
+      </PrismCard>
+
+      <PrismCard title="IT Advisory & Executive Coaching" badge="Vezetői" glow="blue" padding="lg">
+        <p class="text-slate-300 mb-6 leading-relaxed">
+          Közvetlen szakértői támogatás cégvezetőknek és intézményvezetőknek az IT döntések meghozatalában és projektvezetésben.
+        </p>
+        <ul class="space-y-2.5 text-sm text-slate-400 mb-8">
+          <li class="flex items-center gap-2"><span class="text-blue-400">✓</span> Havi keretjellegű stratégiai tanácsadás</li>
+          <li class="flex items-center gap-2"><span class="text-blue-400">✓</span> IT szállítói tárgyalások és tender támogatás</li>
+          <li class="flex items-center gap-2"><span class="text-blue-400">✓</span> Belső IT csapat szakmai coachingja</li>
+        </ul>
+        <div slot="footer">
+          <Button href="/kapcsolat" variant="outline" size="sm">Konzultáció Igénylése</Button>
+        </div>
+      </PrismCard>
+
+      <PrismCard title="Kiberbiztonság & NIS2 / ISO" badge="Megfelelőség" glow="purple" padding="lg">
+        <p class="text-slate-300 mb-6 leading-relaxed">
+          Felkészítjük szervezetét az intézményi és kkv szabályozásokra, a zsarolóvírus-védelemre és a folyamatos mentésre.
+        </p>
+        <ul class="space-y-2.5 text-sm text-slate-400 mb-8">
+          <li class="flex items-center gap-2"><span class="text-purple-400">✓</span> NIS2 & ISO 27001 elvek szerinti hiányelemzés</li>
+          <li class="flex items-center gap-2"><span class="text-purple-400">✓</span> 3-2-1 Adatmentési és katasztrófa-helyreállítási terv</li>
+          <li class="flex items-center gap-2"><span class="text-purple-400">✓</span> Jogosultságkezelési és incidenskezelési szabályzatok</li>
+        </ul>
+        <div slot="footer">
+          <Button href="/kapcsolat" variant="outline" size="sm">Biztonsági Felmérés</Button>
+        </div>
+      </PrismCard>
+
+      <PrismCard title="AI Automatizáció & Működés" badge="Innováció" glow="emerald" padding="lg">
+        <p class="text-slate-300 mb-6 leading-relaxed">
+          Gyakorlati AI és workflow automatizációs megoldások a belső adminisztráció és a tudásáramlás felgyorsítására.
+        </p>
+        <ul class="space-y-2.5 text-sm text-slate-400 mb-8">
+          <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Belső tudásbázisok és RAG asszisztensek</li>
+          <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Power Automate és munkafolyamat-automatizálás</li>
+          <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> M365 Copilot bevezetési tanácsadás</li>
+        </ul>
+        <div slot="footer">
+          <Button href="/kapcsolat" variant="outline" size="sm">Automatizáció Megbeszélés</Button>
+        </div>
+      </PrismCard>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="pt-8 text-center">
+      <PrismCard variant="accent" glow="cyan" padding="lg" class="max-w-4xl mx-auto">
+        <h3 class="text-2xl font-bold text-white mb-3">Nem biztos benne, merre induljon el?</h3>
+        <p class="text-slate-300 mb-6 max-w-xl mx-auto">
+          Kezdje a 45 perces díjmentes Quick Clarity Audittal, és kapjon azonnali objektív visszajelzést.
+        </p>
+        <Button href="/audit" variant="primary" size="lg">
+          Kérem a Díjmentes Auditot
+        </Button>
+      </PrismCard>
+    </div>
+
+  </div>
+</MainLayout>
