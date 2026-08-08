@@ -1,0 +1,77 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import PrismCard from '../../components/PrismCard.astro';
+import Button from '../../components/Button.astro';
+import Badge from '../../components/Badge.astro';
+import AuditForm from '../../components/AuditForm.astro';
+---
+
+<MainLayout 
+  title="IT Biztonsági Ellenőrzőlista Gyártó KKV-knak — IT LENS"
+  description="10 kritikus ellenőrzési pont a leállásmentes termelésért, ipari hálózatszegregációért és ransomware védelemért."
+>
+  <div class="py-16 md:py-24 space-y-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Hero -->
+    <div class="text-center max-w-3xl mx-auto space-y-6">
+      <Badge variant="emerald" pulse={true}>Gyártási IT Ellenőrzőlista</Badge>
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-white font-['Plus_Jakarta_Sans'] leading-tight">
+        Termelésbiztonsági IT Ellenőrzőlista Gyártó KKV-knak
+      </h1>
+      <p class="text-lg text-slate-300 leading-relaxed">
+        Amikor egyetlen órányi szerver- vagy hálózati leállás milliós kiesést okoz a gyártósoron és a logisztikában.
+      </p>
+    </div>
+
+    <!-- 10 Manufacturing Points -->
+    <div class="max-w-4xl mx-auto space-y-6">
+      
+      <PrismCard title="1. Irodai & Ipari (PLC/SCADA) Hálózatszegregáció" glow="emerald">
+        <p class="text-sm text-slate-300">
+          Szigorúan el van-e különítve az irodai dolgozók internet-hozzáférése a gyártóüzemi vezérlőrendszerektől? Egy fertőzött irodai e-mail képes-e leállítani a gyártósort?
+        </p>
+      </PrismCard>
+
+      <PrismCard title="2. Zéró Leállású Redundáns Hálózat" glow="emerald">
+        <p class="text-sm text-slate-300">
+          Rendelkezik-e az üzem kettőzött internethozzáféréssel (FAILOVER WAN) és tartalék hálózati switch-csel, hogy az optikai kábel szakadása esetén se álljon le a szállítás?
+        </p>
+      </PrismCard>
+
+      <PrismCard title="3. Immutábilis Adatmentés (Katatasztrófa-helyreállítás)" glow="emerald">
+        <p class="text-sm text-slate-300">
+          Van-e olyan fizikai vagy felhős mentési másolat, amelyet zsarolóvírus tamadás esetén a támadó nem tud letörölni vagy titkosítani?
+        </p>
+      </PrismCard>
+
+      <PrismCard title="4. Távoli Karbantartói Zárt VPN Hozzáférések" glow="emerald">
+        <p class="text-sm text-slate-300">
+          A külső gépszerelők és szoftveres karbantartók zárt, auditált VPN csatornán keresztül, kötelező MFA azonosítással lépnek-e be a rendszerekbe?
+        </p>
+      </PrismCard>
+
+      <PrismCard title="5. Hardver Életciklus & Garancia Terv" glow="emerald">
+        <p class="text-sm text-slate-300">
+          Minden kritikus üzemi szerver rendelkezik-e 4 órás On-Site gyártói szervizgaranciával (Next Business Day / 4h SLA)?
+        </p>
+      </PrismCard>
+
+    </div>
+
+    <div class="text-center pt-8">
+      <PrismCard variant="accent" glow="emerald" padding="lg" class="max-w-3xl mx-auto space-y-4">
+        <h3 class="text-2xl font-bold text-white">Szeretné felmérni üzeme IT sérülékenységét?</h3>
+        <p class="text-slate-300">
+          Igényelje a díjmentes 45 perces Quick Clarity Auditot, és kapjon vezetői érettségi scorecardot!
+        </p>
+        <Button href="#audit-form" variant="primary" size="lg">
+          Kérem a Díjmentes Gyártási Auditot
+        </Button>
+      </PrismCard>
+    </div>
+
+    <AuditForm id="audit-form" />
+
+  </div>
+</MainLayout>
