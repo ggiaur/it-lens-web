@@ -13,127 +13,87 @@ const { id = "audit-form", class: className = "" } = Astro.props;
   "relative rounded-3xl border border-blue-900/50 bg-[#132442]/90 p-8 sm:p-10 backdrop-blur-2xl shadow-2xl overflow-hidden",
   className
 ]}>
-  <!-- Ambient Light Flare -->
   <div class="absolute -top-32 -right-32 w-80 h-80 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none"></div>
 
   <div class="max-w-xl mx-auto space-y-6 relative z-10">
     <div class="text-center space-y-2">
-      <h3 class="text-2xl font-extrabold text-white font-['Plus_Jakarta_Sans']">
-        Igényelje az IT Auditot
-      </h3>
+      <h3 class="text-2xl font-extrabold text-white">Igényelje az IT Auditot</h3>
       <p class="text-sm text-slate-300">
-        Töltse ki az alábbi űrlapot, és 24 órán belül felvesszük Önnel a kapcsolatot a részletek egyeztetésére.
+        Töltse ki az alábbi űrlapot, és 1 munkanapon belül felvesszük Önnel a kapcsolatot a részletek egyeztetésére.
       </p>
     </div>
 
-    <!-- Success Message Container (Hidden by default) -->
-    <div id="form-success" class="hidden p-6 rounded-2xl bg-emerald-950/90 border border-emerald-500/50 text-center space-y-3 shadow-xl animate-fade-in">
+    <div id="form-success" class="hidden p-6 rounded-2xl bg-emerald-950/90 border border-emerald-500/50 text-center space-y-3 shadow-xl">
       <div class="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 mx-auto flex items-center justify-center font-bold text-xl border border-emerald-500/40">✓</div>
-      <h4 class="text-xl font-bold text-white">Sikeres igénylés!</h4>
-      <p id="form-success-msg" class="text-sm text-emerald-200 leading-relaxed">
-        Köszönjük az megkeresést! Kollégánk 24 órán belül felveszi Önnel a kapcsolatot a megadott elérhetőségeken.
-      </p>
+      <h4 class="text-xl font-bold text-white">Sikeres igénylés</h4>
+      <p id="form-success-msg" class="text-sm text-emerald-200 leading-relaxed"></p>
     </div>
+
+    <div id="form-error" class="hidden p-5 rounded-2xl bg-rose-950/80 border border-rose-500/50 text-sm text-rose-100"></div>
 
     <form id="audit-form-element" class="space-y-4 text-left">
-      
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5" for="name">
-            Teljes Név *
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            required
-            placeholder="Kovács István"
-            class="w-full px-4 py-2.5 rounded-xl bg-[#0c182e] border border-blue-800/60 text-white placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all"
-          />
+          <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5" for="name">Teljes név *</label>
+          <input type="text" id="name" name="name" required maxlength="120" autocomplete="name"
+            class="w-full px-4 py-2.5 rounded-xl bg-[#0c182e] border border-blue-800/60 text-white text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400" />
         </div>
-
         <div>
-          <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5" for="company">
-            Cég / Intézmény *
-          </label>
-          <input
-            type="text"
-            id="company"
-            name="company"
-            required
-            placeholder="Városi Könyvtár / IT Lens Kft."
-            class="w-full px-4 py-2.5 rounded-xl bg-[#0c182e] border border-blue-800/60 text-white placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all"
-          />
+          <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5" for="company">Cég / intézmény *</label>
+          <input type="text" id="company" name="company" required maxlength="160" autocomplete="organization"
+            class="w-full px-4 py-2.5 rounded-xl bg-[#0c182e] border border-blue-800/60 text-white text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400" />
         </div>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5" for="email">
-            E-mail Cím *
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required
-            placeholder="kovacs.istvan@szervezet.hu"
-            class="w-full px-4 py-2.5 rounded-xl bg-[#0c182e] border border-blue-800/60 text-white placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all"
-          />
+          <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5" for="email">E-mail cím *</label>
+          <input type="email" id="email" name="email" required maxlength="254" autocomplete="email"
+            class="w-full px-4 py-2.5 rounded-xl bg-[#0c182e] border border-blue-800/60 text-white text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400" />
         </div>
-
         <div>
-          <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5" for="phone">
-            Telefonszám
-          </label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            placeholder="+36 30 123 4567"
-            class="w-full px-4 py-2.5 rounded-xl bg-[#0c182e] border border-blue-800/60 text-white placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all"
-          />
+          <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5" for="phone">Telefonszám</label>
+          <input type="tel" id="phone" name="phone" maxlength="50" autocomplete="tel"
+            class="w-full px-4 py-2.5 rounded-xl bg-[#0c182e] border border-blue-800/60 text-white text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400" />
         </div>
       </div>
 
       <div>
-        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5" for="audit-type">
-          Választott Audit Típus
-        </label>
-        <select
-          id="audit-type"
-          name="auditType"
-          class="w-full px-4 py-2.5 rounded-xl bg-[#0c182e] border border-blue-800/60 text-white text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all"
-        >
-          <option value="quick">Quick Clarity Audit (45 perc, Ingyenes Scorecard)</option>
-          <option value="deep">Deep System Lens Audit (Teljes körű elemzés & Árajánlat)</option>
-          <option value="advisory">Független IT Tanácsadás / Coaching konzultáció</option>
+        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5" for="audit-type">Választott szolgáltatás</label>
+        <select id="audit-type" name="auditType"
+          class="w-full px-4 py-2.5 rounded-xl bg-[#0c182e] border border-blue-800/60 text-white text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400">
+          <option value="quick">Quick Clarity Audit</option>
+          <option value="deep">Deep System Lens Audit</option>
+          <option value="advisory">Független IT tanácsadás / coaching</option>
         </select>
       </div>
 
       <div>
-        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5" for="message">
-          Rövid megjegyzés / Jelenlegi kihívás
-        </label>
-        <textarea
-          id="message"
-          name="message"
-          rows="3"
-          placeholder="Pl. NIS2 felkészülés, hiányzó dokumentáció, lassú IT infrastruktúra..."
-          class="w-full px-4 py-2.5 rounded-xl bg-[#0c182e] border border-blue-800/60 text-white placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all"
-        ></textarea>
+        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5" for="message">Rövid megjegyzés / jelenlegi kihívás</label>
+        <textarea id="message" name="message" rows="3" maxlength="3000"
+          placeholder="Kérjük, ne írjon ide jelszót, belépési adatot vagy az ajánlatkéréshez nem szükséges különleges személyes adatot."
+          class="w-full px-4 py-2.5 rounded-xl bg-[#0c182e] border border-blue-800/60 text-white placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400"></textarea>
       </div>
 
+      <div class="rounded-xl border border-slate-700 bg-slate-950/50 p-4">
+        <label class="flex items-start gap-3 text-sm text-slate-300">
+          <input type="checkbox" id="privacy-ack" name="privacyAcknowledged" required class="mt-1" />
+          <span>
+            Elolvastam az <a href="/adatkezeles" target="_blank" rel="noopener" class="text-cyan-400 underline">adatkezelési tájékoztatót</a>,
+            és tudomásul vettem az űrlapon megadott adatok kezelésének feltételeit. *
+          </span>
+        </label>
+      </div>
+
+      <input type="text" name="website" id="website" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+
       <div class="pt-2">
-        <Button id="submit-btn" type="submit" variant="primary" size="lg" fullWidth={true}>
-          Kérem a Díjmentes Auditot / Ajánlatot
-        </Button>
+        <Button id="submit-btn" type="submit" variant="primary" size="lg" fullWidth={true}>Igénylés elküldése</Button>
       </div>
 
       <p class="text-[11px] text-slate-400 text-center pt-2">
-        A megadott adatokat bizalmasan kezeljük. Nincs kötelezettség, nincs spam.
+        Az űrlap nem iratkoztat fel marketinglistára. A weboldali igénylés alapján nem születik kizárólag automatizált, Önre nézve jelentős döntés.
       </p>
-
     </form>
   </div>
 </div>
@@ -143,53 +103,59 @@ const { id = "audit-form", class: className = "" } = Astro.props;
     const form = document.getElementById('audit-form-element') as HTMLFormElement;
     const successBox = document.getElementById('form-success');
     const successMsg = document.getElementById('form-success-msg');
+    const errorBox = document.getElementById('form-error');
     const submitBtn = document.getElementById('submit-btn');
 
-    if (form) {
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        const formData = {
-          name: (form.querySelector('#name') as HTMLInputElement)?.value,
-          company: (form.querySelector('#company') as HTMLInputElement)?.value,
-          email: (form.querySelector('#email') as HTMLInputElement)?.value,
-          phone: (form.querySelector('#phone') as HTMLInputElement)?.value,
-          auditType: (form.querySelector('#audit-type') as HTMLSelectElement)?.value,
-          message: (form.querySelector('#message') as HTMLTextAreaElement)?.value
-        };
+    if (!form) return;
 
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errorBox?.classList.add('hidden');
+
+      const formData = {
+        name: (form.querySelector('#name') as HTMLInputElement)?.value.trim(),
+        company: (form.querySelector('#company') as HTMLInputElement)?.value.trim(),
+        email: (form.querySelector('#email') as HTMLInputElement)?.value.trim(),
+        phone: (form.querySelector('#phone') as HTMLInputElement)?.value.trim(),
+        auditType: (form.querySelector('#audit-type') as HTMLSelectElement)?.value,
+        message: (form.querySelector('#message') as HTMLTextAreaElement)?.value.trim(),
+        privacyAcknowledged: (form.querySelector('#privacy-ack') as HTMLInputElement)?.checked === true,
+        privacyVersion: '2026-10-18',
+        website: (form.querySelector('#website') as HTMLInputElement)?.value
+      };
+
+      if (submitBtn) {
+        submitBtn.setAttribute('disabled', 'true');
+        submitBtn.textContent = 'Küldés folyamatban…';
+      }
+
+      try {
+        const response = await fetch('/contact.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
+        });
+        const result = await response.json();
+
+        if (!response.ok || result.success !== true) {
+          throw new Error(result.message || 'Az igénylés elküldése sikertelen.');
+        }
+
+        form.classList.add('hidden');
+        if (successMsg) successMsg.textContent = result.message || 'Köszönjük a megkeresést.';
+        successBox?.classList.remove('hidden');
+      } catch (err) {
+        const message = err instanceof Error ? err.message : 'Az igénylés elküldése sikertelen. Kérjük, próbálja újra vagy írjon az info@it-lens.hu címre.';
+        if (errorBox) {
+          errorBox.textContent = message;
+          errorBox.classList.remove('hidden');
+        }
+      } finally {
         if (submitBtn) {
-          submitBtn.setAttribute('disabled', 'true');
-          submitBtn.innerText = 'Küldés folyamatban...';
+          submitBtn.removeAttribute('disabled');
+          submitBtn.textContent = 'Igénylés elküldése';
         }
-
-        try {
-          const response = await fetch('/contact.php', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData)
-          });
-
-          const result = await response.json();
-
-          if (form) form.classList.add('hidden');
-          if (successBox) {
-            if (successMsg && result.message) {
-              successMsg.innerText = result.message;
-            }
-            successBox.classList.remove('hidden');
-          }
-        } catch (err) {
-          // Fallback UI for offline / dev preview
-          if (form) form.classList.add('hidden');
-          if (successBox) {
-            if (successMsg) {
-              successMsg.innerText = 'Köszönjük az igénylést! Az adatokat továbbítottuk, 24 órán belül felvesszük Önnel a kapcsolatot.';
-            }
-            successBox.classList.remove('hidden');
-          }
-        }
-      });
-    }
+      }
+    });
   });
 </script>
