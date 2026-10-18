@@ -1,0 +1,116 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { legal } from '../data/legal';
+---
+
+<MainLayout
+  title="Adatkezelési tájékoztató — IT LENS"
+  description="Az it-lens.hu adatkezelési tájékoztatója."
+>
+  <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 prose prose-invert prose-slate">
+    <h1>Adatkezelési tájékoztató</h1>
+    <p><strong>Verzió:</strong> 2026. október 18. — közzététel előtti jogi ellenőrzésre előkészítve.</p>
+
+    <h2>1. Adatkezelő</h2>
+    <p>
+      <strong>Név:</strong> {legal.operatorName}<br />
+      <strong>Székhely:</strong> {legal.registeredOffice}<br />
+      <strong>Nyilvántartó szerv:</strong> {legal.registrationAuthority}<br />
+      <strong>Nyilvántartási szám:</strong> {legal.registrationNumber}<br />
+      <strong>Adószám:</strong> {legal.taxNumber}<br />
+      <strong>E-mail:</strong> <a href={`mailto:${legal.email}`}>{legal.email}</a>
+    </p>
+
+    <h2>2. Kapcsolatfelvételi és auditigénylő űrlap</h2>
+    <p>
+      Az űrlapon megadott név, szervezet neve, e-mail-cím, opcionális telefonszám,
+      választott szolgáltatás és szabad szöveges üzenet kezelésének célja a
+      megkeresés megválaszolása, a kért konzultáció vagy audit előkészítése és a
+      kapcsolattartás.
+    </p>
+    <p>
+      A jogalap az érintett saját szerződéskötési szándéka esetén a GDPR 6. cikk
+      (1) bekezdés b) pontja szerinti, szerződéskötést megelőző lépések megtétele.
+      Ha az érintett egy szervezet kapcsolattartójaként jár el, az adatkezelés
+      jogalapja az adatkezelő és a megkereső szervezet GDPR 6. cikk (1) bekezdés
+      f) pontja szerinti jogos érdeke a szakmai kapcsolatfelvétel és az ajánlat
+      előkészítése érdekében.
+    </p>
+    <p>
+      A telefonszám megadása nem kötelező. A szabad szöveges mezőben kérjük,
+      ne adjon meg különleges adatot, jelszót, belépési adatot, egészségügyi vagy
+      más, az ajánlatkéréshez nem szükséges személyes információt.
+    </p>
+    <p>
+      Ha a megkeresésből nem jön létre szerződéses kapcsolat, az adatokat az
+      utolsó érdemi kapcsolatfelvételtől számított legfeljebb 6 hónapig őrizzük
+      meg, kivéve, ha jogi igény érvényesítése vagy más jogszabályi kötelezettség
+      hosszabb megőrzést tesz szükségessé. Szerződés létrejötte esetén az adatok
+      a szerződéses ügyfélkezelésbe kerülnek át, amelyre külön ügyfél-adatkezelési
+      szabályok vonatkoznak.
+    </p>
+
+    <h2>3. Technikai naplóadatok</h2>
+    <p>
+      A tárhelyszolgáltató a weboldal biztonságos és stabil működéséhez szükséges
+      szervernaplókat kezelhet, így különösen IP-címet, időpontot, kért erőforrást,
+      böngésző- és hibainformációt. Ennek célja az informatikai biztonság,
+      hibakeresés és visszaélés-megelőzés. A jogalap a GDPR 6. cikk (1) bekezdés
+      f) pontja szerinti jogos érdek. A megőrzési időt a tárhelyszolgáltatói
+      konfigurációval összhangban kell véglegesíteni a közzététel előtt.
+    </p>
+
+    <h2>4. Címzettek és adatfeldolgozók</h2>
+    <p>
+      Tárhelyszolgáltató: {legal.hostingProvider.name},
+      {legal.hostingProvider.address},
+      <a href={`mailto:${legal.hostingProvider.email}`}>{legal.hostingProvider.email}</a>.
+      A kapcsolatfelvételi űrlap a tárhely levelezési funkcióján keresztül a
+      {legal.email} címre továbbítja a megkeresést.
+    </p>
+    <p>
+      <strong>Közzététel előtti ellenőrzési pont:</strong> a tényleges levelezési
+      szolgáltatót és az esetleges EGT-n kívüli adattovábbítást a végleges
+      adatkezelési nyilvántartás alapján rögzíteni kell.
+    </p>
+
+    <h2>5. Sütik és külső követés</h2>
+    <p>
+      Az it-lens.hu jelenlegi forráskódja nem használ marketing- vagy analitikai
+      sütit, és a kapcsolatfelvételhez nem szükséges hozzájárulás alapú követés.
+      Részletek a <a href="/sutik">Süti tájékoztatóban</a>.
+    </p>
+
+    <h2>6. AI-val támogatott szolgáltatás</h2>
+    <p>
+      Az IT LENS egyes audit- és tanácsadási munkafolyamatai mesterséges
+      intelligenciával támogatott elemzést használhatnak. A weboldali
+      kapcsolatfelvételi űrlap nem hoz kizárólag automatizált, az érintettre nézve
+      joghatással vagy hasonlóan jelentős hatással járó döntést. Az AI használat
+      további részleteit az <a href="/ai-atlathatosag">AI átláthatósági
+      tájékoztató</a> tartalmazza.
+    </p>
+
+    <h2>7. Érintetti jogok</h2>
+    <p>
+      Az érintett kérheti személyes adataihoz való hozzáférését, helyesbítését,
+      törlését, kezelésének korlátozását, és a feltételek fennállása esetén
+      tiltakozhat a jogos érdeken alapuló adatkezelés ellen, illetve élhet az
+      adathordozhatósághoz való jogával. Kérelmét a {legal.email} címen nyújthatja be.
+    </p>
+
+    <h2>8. Panasz és jogorvoslat</h2>
+    <p>
+      Panasz tehető a Nemzeti Adatvédelmi és Információszabadság Hatóságnál
+      (NAIH): 1055 Budapest, Falk Miksa utca 9–11.; postacím: 1363 Budapest,
+      Pf. 9.; e-mail: ugyfelszolgalat@naih.hu; telefon: +36 1 391 1400.
+      Az érintett bírósághoz is fordulhat.
+    </p>
+
+    <h2>9. Változások</h2>
+    <p>
+      A tájékoztatót az adatkezelések, szolgáltatók vagy jogszabályi környezet
+      változásakor frissítjük. A mindenkori hatályos verzió ezen az oldalon érhető el.
+    </p>
+  </article>
+</MainLayout>
