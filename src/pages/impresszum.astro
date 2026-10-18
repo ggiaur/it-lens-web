@@ -1,0 +1,34 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { legal } from '../data/legal';
+---
+
+<MainLayout title="Impresszum — IT LENS" description="Az it-lens.hu szolgáltatói adatai.">
+  <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 prose prose-invert prose-slate">
+    <h1>Impresszum</h1>
+    <p><strong>Szolgáltató / üzemeltető:</strong> {legal.operatorName}</p>
+    <p><strong>Székhely:</strong> {legal.registeredOffice}</p>
+    <p><strong>Nyilvántartó szerv:</strong> {legal.registrationAuthority}</p>
+    <p><strong>Nyilvántartási szám:</strong> {legal.registrationNumber}</p>
+    <p><strong>Adószám:</strong> {legal.taxNumber}</p>
+    <p><strong>Kapcsolattartási e-mail:</strong> <a href={`mailto:${legal.email}`}>{legal.email}</a></p>
+    <p><strong>Honlap:</strong> it-lens.hu</p>
+
+    <h2>Tárhelyszolgáltató</h2>
+    <p>
+      <strong>{legal.hostingProvider.name}</strong><br />
+      {legal.hostingProvider.address}<br />
+      E-mail: <a href={`mailto:${legal.hostingProvider.email}`}>{legal.hostingProvider.email}</a><br />
+      Telefon: {legal.hostingProvider.phone}<br />
+      Web: <a href={legal.hostingProvider.website} rel="external">{legal.hostingProvider.website}</a>
+    </p>
+
+    <h2>Szakmai és megfelelőségi korlát</h2>
+    <p>
+      Az oldalon található kiberbiztonsági, NIS2-, ISO 27001- és egyéb
+      megfelelőségi tartalmak tájékoztató, állapotfelmérési és tanácsadási célt
+      szolgálnak. Nem minősülnek hatósági, akkreditált tanúsítói vagy jogi
+      megfelelőségi igazolásnak.
+    </p>
+  </article>
+</MainLayout>

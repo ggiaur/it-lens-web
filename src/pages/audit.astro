@@ -7,87 +7,57 @@ import PrismCard from '../components/PrismCard.astro';
 import Badge from '../components/Badge.astro';
 ---
 
-<MainLayout 
+<MainLayout
   title="IT Audit & Clarity Scorecard — IT LENS"
-  description="Díjmentes Quick Clarity Audit és mélyreható Deep System Lens Audit kkv-k és közintézmények számára. Rálátás, kontroll és konkrét fejlesztési roadmap."
+  description="Quick Clarity Audit és Deep System Lens Audit kkv-k és közintézmények számára. Bizonyíték-alapú helyzetkép és fejlesztési roadmap."
 >
   <div class="py-16 md:py-24 space-y-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    
-    <!-- Hero Section -->
     <div class="text-center max-w-3xl mx-auto space-y-6">
       <Badge variant="cyan" pulse={true}>Tiszta Rálátás & Kontroll</Badge>
-      
-      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white font-['Plus_Jakarta_Sans'] leading-tight tracking-tight">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight tracking-tight">
         Lássa pontosan, hol tart az IT infrastruktúrája.
       </h1>
-
       <p class="text-lg text-slate-300 leading-relaxed">
-        Az IT Audit segítségével azonosítjuk a rejtett biztonsági kockázatokat, az elavult dokumentációkat és a szűk keresztmetszeteket — érthető döntéshozói nyelvben, szakzsargon nélkül.
+        Az IT Audit célja a technikai és működési kockázatok bizonyíték-alapú feltárása és egy priorizált fejlesztési terv elkészítése — döntéshozói nyelven.
       </p>
     </div>
 
-    <!-- Comparison Table Section -->
     <div class="space-y-8">
-      <SectionHeader
-        tag="Ajánlataink"
-        title="Válassza ki az Önnek megfelelő audit szintet"
-        description="A gyors helyzetértékeléstől a több napos mélyreható architektúra-elemzésig."
-      />
-
+      <SectionHeader tag="Ajánlataink" title="Válassza ki az Önnek megfelelő audit szintet"
+        description="A gyors helyzetértékeléstől a mélyebb, engedélyezett scope alapján végzett vizsgálatig." />
       <AuditTable />
     </div>
 
-    <!-- What's included in the Audit Scorecard? -->
     <div class="space-y-12">
-      <SectionHeader
-        tag="Módszertan"
-        title="Az audit 5 pillére"
-        description="Minden felmérésünk 5 kritikus üzleti és technológiai dimenzióra terjed ki."
-      />
+      <SectionHeader tag="Módszertan" title="Az audit fő vizsgálati dimenziói"
+        description="A vizsgálat mélységét mindig a jóváhagyott scope, az elérhető bizonyíték és a választott szolgáltatás határozza meg." />
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <PrismCard title="1. IT Biztonság & Mentés" badge="Kritikus" glow="cyan">
-          <p class="text-sm text-slate-300">
-            Adatmentések visszaállíthatóságának ellenőrzése, zsarolóvírus elleni védelem és hozzáférés-kezelés.
-          </p>
+          <p class="text-sm text-slate-300">Mentési, hozzáférési és védelmi kontrollok állapotának felmérése, a rendelkezésre álló bizonyítékok alapján.</p>
         </PrismCard>
-
         <PrismCard title="2. Dokumentáció & Tudás" badge="Üzemeltetés" glow="blue">
-          <p class="text-sm text-slate-300">
-            Hardver- és szoftverleltár, hálózati topológia és szállítói szerződések átláthatósága.
-          </p>
+          <p class="text-sm text-slate-300">Leltárak, rendszerleírások, felelősségek és működési dokumentáció áttekintése.</p>
         </PrismCard>
-
-        <PrismCard title="3. Folyamatok & SLA" badge="Működés" glow="purple">
-          <p class="text-sm text-slate-300">
-            Rendszergaranciák, válaszidők, reakciókészség és üzemeltetői függőségek feltárása.
-          </p>
+        <PrismCard title="3. Folyamatok & Szolgáltatás" badge="Működés" glow="purple">
+          <p class="text-sm text-slate-300">Incidens-, változás-, szolgáltatási és beszállítói folyamatok vizsgálata.</p>
         </PrismCard>
-
-        <PrismCard title="4. Megfelelőség (NIS2 / ISO)" badge="Jogi" glow="emerald">
-          <p class="text-sm text-slate-300">
-            Közintézményi és szabályozott szektorbeli előírásoknak való megfelelőségi szint kiértékelése.
-          </p>
+        <PrismCard title="4. NIS2 / ISO 27001 felkészültség" badge="Keretrendszer" glow="emerald">
+          <p class="text-sm text-slate-300">Hiány- és felkészültségi elemzés releváns követelmények és kontrollkeretek mentén. Nem hatósági vagy akkreditált tanúsítás.</p>
         </PrismCard>
-
         <PrismCard title="5. Kapacitás & Jövőkép" badge="Fejlődés" glow="cyan">
-          <p class="text-sm text-slate-300">
-            Költségoptimalizálás, felhős stratégiák és automatizációs lehetőségek felmérése.
-          </p>
+          <p class="text-sm text-slate-300">Költség-, architektúra- és automatizációs fejlesztési lehetőségek értékelése.</p>
         </PrismCard>
+        <PrismCard title="Vezetői összefoglaló" badge="Deliverable" glow="blue">
+          <p class="text-sm text-slate-300">Pontozott helyzetkép, bizonyítékkal alátámasztott megállapítások és prioritási sorrendbe állított teendők.</p>
+        </PrismCard>
+      </div>
 
-        <PrismCard title="Vezetői Összefoglaló" badge="Deliverable" glow="blue">
-          <p class="text-sm text-slate-300">
-            Közvetlenül használható, pontozott scorecard és prioritási sorrendbe állított cselekvési terv.
-          </p>
-        </PrismCard>
+      <div class="rounded-2xl border border-amber-500/30 bg-amber-950/20 p-5 text-sm text-amber-100">
+        Az IT LENS audit és önellenőrző tartalmai nem minősülnek jogi tanácsadásnak, hatósági megfelelőségi határozatnak vagy akkreditált ISO/NIS2 tanúsításnak.
       </div>
     </div>
 
-    <!-- Form Section -->
-    <div>
-      <AuditForm id="audit-form" />
-    </div>
-
+    <div><AuditForm id="audit-form" /></div>
   </div>
 </MainLayout>
