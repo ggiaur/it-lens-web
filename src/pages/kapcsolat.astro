@@ -5,62 +5,46 @@ import PrismCard from '../components/PrismCard.astro';
 import Badge from '../components/Badge.astro';
 ---
 
-<MainLayout 
+<MainLayout
   title="Kapcsolat — IT LENS"
-  description="Lépjen kapcsolatba az IT LENS stratégiai tanácsadóival. Közvetlen időpontfoglalás és konzultáció."
+  description="Kapcsolatfelvétel az IT LENS stratégiai IT tanácsadási és audit szolgáltatásaihoz."
 >
   <div class="py-16 md:py-24 space-y-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    
     <div class="text-center max-w-3xl mx-auto space-y-6">
       <Badge variant="cyan" pulse={true}>Kapcsolatfelvétel</Badge>
-      <h1 class="text-4xl sm:text-5xl font-extrabold text-white font-['Plus_Jakarta_Sans'] tracking-tight">
-        Kérdése van? Kérjen konzultációt!
-      </h1>
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">Kérdése van? Kérjen konzultációt!</h1>
       <p class="text-lg text-slate-300 leading-relaxed">
-        Töltse ki az űrlapot, vagy lépjen kapcsolatba velünk közvetlenül. 24 órán belül válaszolunk.
+        Töltse ki az űrlapot, vagy írjon az info@it-lens.hu címre. A megkeresésekre jellemzően 1 munkanapon belül válaszolunk.
       </p>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
-      
-      <!-- Contact Info Cards -->
       <div class="space-y-6">
-        <PrismCard title="Közvetlen Elérhetőség" glow="cyan">
+        <PrismCard title="Közvetlen elérhetőség" glow="cyan">
           <ul class="space-y-4 text-sm text-slate-300">
-            <li class="flex items-start gap-3">
-              <span class="text-cyan-400 font-bold">Domain:</span>
-              <span>it-lens.hu</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-cyan-400 font-bold">Fókusz:</span>
-              <span>Közintézmények & Gyártó/Szolgáltató KKV IT Tanácsadás</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-cyan-400 font-bold">Válaszidő:</span>
-              <span>Munkaidőben &lt; 1 munkanap</span>
-            </li>
+            <li><span class="text-cyan-400 font-bold">E-mail:</span> <a href="mailto:info@it-lens.hu">info@it-lens.hu</a></li>
+            <li><span class="text-cyan-400 font-bold">Domain:</span> it-lens.hu</li>
+            <li><span class="text-cyan-400 font-bold">Fókusz:</span> Közintézmények és KKV IT tanácsadás</li>
           </ul>
         </PrismCard>
 
-        <PrismCard title="Alapítói Elkötelezettség" glow="blue">
+        <PrismCard title="Szakértői kontroll" glow="blue">
           <p class="text-sm text-slate-300 leading-relaxed">
-            Minden auditot és stratégiai megbeszélést közvetlenül tapasztalt IT tanácsadó vezet, biztosítva a maximális szakmai színvonalat és függetlenséget.
+            Az ügyfélnek kiadandó jelentős auditmegállapításoknál szakértői felülvizsgálatot alkalmazunk; az AI és a technikai eszközök támogató szerepet töltenek be.
           </p>
         </PrismCard>
 
-        <PrismCard title="Garantált Bizalmasság" glow="purple">
+        <PrismCard title="Adatkezelés és bizalmasság" glow="purple">
           <p class="text-sm text-slate-300 leading-relaxed">
-            Az átadott információkat szigorú üzleti és adatvédelmi titoktartás mellett kezeljük.
+            A kapcsolatfelvételi adatokat kizárólag a megkeresés kezeléséhez szükséges körben használjuk.
+            Részletek az <a href="/adatkezeles" class="text-cyan-400 underline">adatkezelési tájékoztatóban</a>.
           </p>
         </PrismCard>
       </div>
 
-      <!-- Form Area -->
       <div class="lg:col-span-2">
         <AuditForm id="kapcsolat-form" />
       </div>
-
     </div>
-
   </div>
 </MainLayout>
